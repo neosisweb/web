@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Noesis Web | Web Design & Development Showcase Kuwait</title>
+    <meta name="description" content="Explore the portfolio of Noesis Web. See examples of our web design, e-commerce development, and custom web solutions for clients in Kuwait and beyond.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .animation-delay-200 { animation-delay: 0.2s; }
+          .animation-delay-400 { animation-delay: 0.4s; }
+          .animation-delay-600 { animation-delay: 0.6s; }
+          .animation-delay-800 { animation-delay: 0.8s; }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-beige': '#F5F5DC',
+                        'pure-black': '#000000',
+                        'accent-gray': '#333333',
+                        'hover-accent': '#555555',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-beige font-inter text-pure-black antialiased relative overflow-x-hidden">
+
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <header id="main-header" class="fixed top-0 left-0 w-full bg-light-beige/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="index.html" class="logo-link hover-target">
+                <img src="img/logolight.png" alt="Noesis Web Logo" id="header-logo-img" class="h-10 md:h-12 transition-transform duration-300 hover:scale-105">
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="index.html" class="nav-link hover-target">Home</a>
+                <a href="about.html" class="nav-link hover-target">About Us</a>
+                <a href="services.html" class="nav-link hover-target">Services</a>
+                <a href="portfolio.html" class="nav-link active hover-target">Portfolio</a>
+                <a href="pricing.html" class="nav-link hover-target">Pricing</a>
+                <a href="contact.html" class="nav-link-button btn btn-dark hover-target">Get a Quote</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pure-black focus:outline-none hover-target" aria-label="Open mobile menu" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-light-beige shadow-xl absolute top-full left-0 w-full" aria-hidden="true">
+            <a href="index.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Home</a>
+            <a href="about.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">About Us</a>
+            <a href="services.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Services</a>
+            <a href="portfolio.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Portfolio</a>
+            <a href="pricing.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Pricing</a>
+            <a href="contact.html" class="block py-4 px-6 text-light-beige bg-pure-black text-center font-semibold hover:bg-accent-gray transition-colors duration-200 hover-target">Get a Quote</a>
+        </div>
+    </header>
+
+    <main class="pt-20 md:pt-24">
+
+        <section id="page-header-portfolio" class="py-16 md:py-24 bg-pure-black text-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-up opacity-0">Our Work</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    A showcase of our commitment to intelligent design, technical craftsmanship, and client success.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-light-beige">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-lg text-accent-gray max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-400">
+                    At Noesis Web, we take immense pride in the digital solutions we create. Each project is a testament to our collaborative approach and our dedication to delivering excellence. Below is a selection of our work, demonstrating our capabilities across various industries and platforms. (More projects are added regularly!)
+                </p>
+            </div>
+        </section>
+
+        <section id="portfolio-grid" class="py-16 md:py-24 bg-light-beige">
+            <div class="container mx-auto px-6">
+                <!--
+                <div class="flex justify-center space-x-4 mb-12 animate-fade-in-up opacity-0 animation-delay-600">
+                    <button class="portfolio-filter-btn active hover-target" data-filter="all">All</button>
+                    <button class="portfolio-filter-btn hover-target" data-filter="ecommerce">E-commerce</button>
+                    <button class="portfolio-filter-btn hover-target" data-filter="wordpress">WordPress</button>
+                    <button class="portfolio-filter-btn hover-target" data-filter="custom">Custom Design</button>
+                </div>
+                -->
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-200 hover-target" data-category="ecommerce">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/000000/F5F5DC?text=Kuwait+Fashion+Hub" alt="Kuwait Fashion Hub - Shopify Store" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">Kuwait Fashion Hub</h3>
+                            <p class="text-sm text-accent-gray">Shopify E-commerce Platform</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-400 hover-target" data-category="wordpress">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/333333/F5F5DC?text=Global+Logistics+Corp" alt="Global Logistics Corp - WordPress Site" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">Global Logistics Corp.</h3>
+                            <p class="text-sm text-accent-gray">Corporate WordPress Website</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-600 hover-target" data-category="custom">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/555555/F5F5DC?text=Artisan+Cafe+KW" alt="Artisan Cafe KW - Custom Design" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">Artisan Café Kuwait</h3>
+                            <p class="text-sm text-accent-gray">Custom Web Design & Branding</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-200 hover-target" data-category="ecommerce">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/000000/F5F5DC?text=TechGadgets+Online" alt="TechGadgets Online - WooCommerce" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">TechGadgets Online</h3>
+                            <p class="text-sm text-accent-gray">WooCommerce E-commerce Store</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-400 hover-target" data-category="custom">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/333333/F5F5DC?text=Consultancy+Pro" alt="Consultancy Pro - Professional Services Site" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">Consultancy Pro</h3>
+                            <p class="text-sm text-accent-gray">Professional Services Website</p>
+                        </div>
+                    </div>
+
+                     <div class="portfolio-item-card group animate-fade-in-up opacity-0 animation-delay-600 hover-target" data-category="wordpress">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="https://placehold.co/600x450/555555/F5F5DC?text=Healthy+Eats+Blog" alt="Healthy Eats Blog - WordPress" class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-pure-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6">
+                                <a href="#" class="btn btn-light-outline text-sm">View Project (Soon)</a>
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-xl font-semibold text-pure-black mb-1">Healthy Eats Blog</h3>
+                            <p class="text-sm text-accent-gray">Content-Rich WordPress Blog</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                <div class="mt-16 flex justify-center animate-fade-in-up opacity-0 animation-delay-800">
+                    <nav aria-label="Portfolio navigation">
+                        <ul class="inline-flex items-center -space-x-px">
+                            <li><a href="#" class="pagination-link rounded-l-lg hover-target">Previous</a></li>
+                            <li><a href="#" class="pagination-link active hover-target" aria-current="page">1</a></li>
+                            <li><a href="#" class="pagination-link hover-target">2</a></li>
+                            <li><a href="#" class="pagination-link hover-target">3</a></li>
+                            <li><a href="#" class="pagination-link rounded-r-lg hover-target">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <section id="portfolio-cta" class="py-20 md:py-24 bg-pure-black text-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up opacity-0">Inspired by Our Work?</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300 animate-fade-in-up opacity-0 animation-delay-200">
+                    Let's discuss how Noesis Web can craft a unique and impactful digital solution for your brand.
+                </p>
+                <div class="animate-fade-in-up opacity-0 animation-delay-400">
+                    <a href="contact.html" class="btn btn-light btn-lg hover-target group">
+                        Start Your Project Today
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-accent-gray text-light-beige py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4 md:mb-0 hover-target">
+                        <img src="img/logolight.png" alt="Noesis Web Logo Footer" id="footer-logo-img" class="h-10 mx-auto md:mx-0 opacity-90 hover:opacity-100 transition-opacity">
+                    </a>
+                </div>
+                <div class="md:col-span-1 text-center">
+                    <p class="text-sm mb-1">&copy; <span id="current-year"></span> Noesis Web. All Rights Reserved.</p>
+                    <p class="text-xs text-gray-400">Intelligent Web Solutions in Salmiya, Kuwait.</p>
+                </div>
+                <div class="md:col-span-1 flex justify-center md:justify-end space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.594-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

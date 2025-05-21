@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Noesis Web | Expert Web Design & Development in Kuwait</title>
+    <meta name="description" content="Explore the comprehensive web design, development, e-commerce (Shopify, WordPress), UI/UX, and hosting services offered by Noesis Web in Kuwait.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .animation-delay-200 { animation-delay: 0.2s; }
+          .animation-delay-400 { animation-delay: 0.4s; }
+          .animation-delay-600 { animation-delay: 0.6s; }
+          .animation-delay-800 { animation-delay: 0.8s; }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-beige': '#F5F5DC',
+                        'pure-black': '#000000',
+                        'accent-gray': '#333333',
+                        'hover-accent': '#555555',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-beige font-inter text-pure-black antialiased relative overflow-x-hidden">
+
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <header id="main-header" class="fixed top-0 left-0 w-full bg-light-beige/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="index.html" class="logo-link hover-target">
+                <img src="img/logolight.png" alt="Noesis Web Logo" id="header-logo-img" class="h-12 md:h-12 transition-transform duration-300 hover:scale-105">
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="index.html" class="nav-link hover-target">Home</a>
+                <a href="about.html" class="nav-link hover-target">About Us</a>
+                <a href="services.html" class="nav-link active hover-target">Services</a>
+                <a href="portfolio.html" class="nav-link hover-target">Portfolio</a>
+                <a href="pricing.html" class="nav-link hover-target">Pricing</a>
+                <a href="contact.html" class="nav-link-button btn btn-dark hover-target">Get a Quote</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pure-black focus:outline-none hover-target" aria-label="Open mobile menu" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-light-beige shadow-xl absolute top-full left-0 w-full" aria-hidden="true">
+            <a href="index.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Home</a>
+            <a href="about.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">About Us</a>
+            <a href="services.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Services</a>
+            <a href="portfolio.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Portfolio</a>
+            <a href="pricing.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Pricing</a>
+            <a href="contact.html" class="block py-4 px-6 text-light-beige bg-pure-black text-center font-semibold hover:bg-accent-gray transition-colors duration-200 hover-target">Get a Quote</a>
+        </div>
+    </header>
+
+    <main class="pt-20 md:pt-24">
+
+        <section id="page-header-services" class="py-16 md:py-24 bg-pure-black text-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-up opacity-0">Our Digital Services</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    A comprehensive suite of web solutions designed to empower your brand, engage your audience, and drive measurable growth.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-light-beige">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-lg text-accent-gray max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-400">
+                    At Noesis Web, we blend insightful strategy with creative design and cutting-edge technology to deliver a full spectrum of web services. Whether you're launching a new venture, scaling an existing business, or seeking to enhance your digital footprint, our team in Kuwait is equipped to bring your vision to life.
+                </p>
+            </div>
+        </section>
+
+        <div class="space-y-0"> 
+
+            <section id="custom-design" class="py-16 md:py-24 bg-light-beige">
+                <div class="container mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                        <div class="animate-slide-in-left opacity-0">
+                            <span class="text-sm font-semibold uppercase text-accent-gray tracking-wider">Service Highlight</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-pure-black my-3">Custom Web Design & Development</h2>
+                            <p class="text-accent-gray leading-relaxed mb-6">
+                                Your website is often the first interaction potential customers have with your brand. We craft bespoke websites that are not just visually stunning but also strategically designed to meet your specific business objectives. Our custom solutions ensure a unique brand identity, intuitive user experience, and optimal performance.
+                            </p>
+                            <ul class="space-y-3 text-accent-gray mb-8">
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Tailored UI/UX design reflecting your brand's essence.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Fully responsive development for seamless viewing on all devices.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Scalable architecture to support future growth.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Clean, optimized code for enhanced speed and SEO.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Integration with third-party tools and APIs as needed.</span></li>
+                            </ul>
+                            <a href="contact.html?service=custom-design" class="btn btn-dark hover-target group">
+                                Discuss Your Custom Project <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                        <div class="animate-slide-in-right opacity-0 animation-delay-200">
+                            <img src="https://placehold.co/600x450/000000/F5F5DC?text=Bespoke+Web+Design" alt="Custom Web Design Showcase" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ecommerce" class="py-16 md:py-24 bg-pure-black text-light-beige">
+                <div class="container mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                        <div class="lg:order-2 animate-slide-in-right opacity-0">
+                            <span class="text-sm font-semibold uppercase text-gray-400 tracking-wider">Service Highlight</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-light-beige my-3">E-commerce Excellence</h2>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                Transform your online retail vision into a thriving business with our expert e-commerce solutions. We specialize in building powerful, scalable, and user-friendly online stores using leading platforms like Shopify and WordPress (WooCommerce). From initial setup to advanced customizations, we help you maximize sales and customer loyalty.
+                            </p>
+                            <ul class="space-y-3 text-gray-300 mb-8">
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Shopify store setup, theme customization, and app integration.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>WooCommerce development for flexible WordPress e-commerce.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Secure payment gateway integration and shipping solutions.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Product catalog management and inventory systems.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Conversion rate optimization (CRO) strategies.</span></li>
+                            </ul>
+                            <a href="contact.html?service=ecommerce" class="btn btn-light hover-target group">
+                                Build Your Online Store <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                        <div class="lg:order-1 animate-slide-in-left opacity-0 animation-delay-200">
+                            <img src="https://placehold.co/600x450/F5F5DC/000000?text=E-commerce+Platforms" alt="E-commerce Solutions Showcase" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="platforms" class="py-16 md:py-24 bg-light-beige">
+                <div class="container mx-auto px-6">
+                     <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                        <div class="animate-slide-in-left opacity-0">
+                            <span class="text-sm font-semibold uppercase text-accent-gray tracking-wider">Service Highlight</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-pure-black my-3">Platform & CMS Mastery</h2>
+                            <p class="text-accent-gray leading-relaxed mb-6">
+                                We leverage the power of leading Content Management Systems (CMS) like WordPress and versatile platforms like Shopify to provide you with flexible, scalable, and easy-to-manage websites. Our expertise ensures that your chosen platform is optimized for performance, security, and your specific content needs.
+                            </p>
+                            <ul class="space-y-3 text-accent-gray mb-8">
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Expert WordPress theme and plugin development/customization.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Advanced Shopify configurations and headless commerce solutions.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Content migration and CMS training for your team.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Performance tuning and security hardening for CMS platforms.</span></li>
+                            </ul>
+                            <a href="contact.html?service=platforms" class="btn btn-dark hover-target group">
+                                Leverage Our Expertise <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                        <div class="animate-slide-in-right opacity-0 animation-delay-200">
+                            <img src="https://placehold.co/600x450/000000/F5F5DC?text=WordPress+&+Shopify" alt="CMS Platforms" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ui-ux" class="py-16 md:py-24 bg-pure-black text-light-beige">
+                 <div class="container mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                        <div class="lg:order-2 animate-slide-in-right opacity-0">
+                            <span class="text-sm font-semibold uppercase text-gray-400 tracking-wider">Service Highlight</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-light-beige my-3">Intuitive UI/UX Design</h2>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                User experience (UX) and user interface (UI) design are at the heart of every successful digital product. Our design process is deeply rooted in understanding user behavior and client goals to create interfaces that are not only beautiful but also intuitive, accessible, and engaging, leading to higher conversions and user satisfaction.
+                            </p>
+                            <ul class="space-y-3 text-gray-300 mb-8">
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>User research, persona development, and journey mapping.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Wireframing, interactive prototyping, and usability testing.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Visually compelling and brand-consistent UI design.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Accessibility (WCAG) considerations for inclusive experiences.</span></li>
+                                <li class="flex items-start"><span class="text-light-beige font-bold mr-2 mt-1">✓</span> <span>Mobile-first and responsive design principles.</span></li>
+                            </ul>
+                            <a href="contact.html?service=ui-ux" class="btn btn-light hover-target group">
+                                Enhance User Experience <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                        <div class="lg:order-1 animate-slide-in-left opacity-0 animation-delay-200">
+                             <img src="https://placehold.co/600x450/F5F5DC/000000?text=UI/UX+Design+Process" alt="UI/UX Design" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hosting-maintenance" class="py-16 md:py-24 bg-light-beige">
+                <div class="container mx-auto px-6">
+                     <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                        <div class="animate-slide-in-left opacity-0">
+                            <span class="text-sm font-semibold uppercase text-accent-gray tracking-wider">Service Highlight</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-pure-black my-3">Reliable Hosting & Ongoing Maintenance</h2>
+                            <p class="text-accent-gray leading-relaxed mb-6">
+                                Launching your website is just the beginning. We provide robust and secure hosting solutions, including expertise with providers like Hostinger, to ensure optimal uptime and performance. Our ongoing maintenance packages offer peace of mind, keeping your site updated, secure, and running smoothly.
+                            </p>
+                            <ul class="space-y-3 text-accent-gray mb-8">
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Managed web hosting and server configuration.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Regular security updates, backups, and monitoring.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Performance optimization and speed enhancements.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Technical support and troubleshooting.</span></li>
+                                <li class="flex items-start"><span class="text-pure-black font-bold mr-2 mt-1">✓</span> <span>Content updates and feature enhancements as needed.</span></li>
+                            </ul>
+                            <a href="contact.html?service=hosting" class="btn btn-dark hover-target group">
+                                Secure Your Site <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            </a>
+                        </div>
+                        <div class="animate-slide-in-right opacity-0 animation-delay-200">
+                            <img src="https://placehold.co/600x450/000000/F5F5DC?text=Secure+Hosting" alt="Hosting and Maintenance" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <section id="our-process" class="py-16 md:py-24 bg-pure-black text-light-beige">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading-light mb-6 animate-fade-in-up opacity-0">How We Bring Your Vision to Life</h2>
+                <p class="section-subheading-light mb-12 animate-fade-in-up opacity-0 animation-delay-200">
+                    Our structured yet flexible process ensures clarity, collaboration, and exceptional outcomes.
+                </p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="process-step hover-target animate-fade-in-up opacity-0 animation-delay-200">
+                        <div class="text-3xl mb-3">01</div>
+                        <h3 class="text-xl font-semibold mb-2">Discovery & Insight</h3>
+                        <p class="text-sm text-gray-400">Understanding your goals, audience, and requirements.</p>
+                    </div>
+                    <div class="process-step hover-target animate-fade-in-up opacity-0 animation-delay-400">
+                        <div class="text-3xl mb-3">02</div>
+                        <h3 class="text-xl font-semibold mb-2">Design & Prototyping</h3>
+                        <p class="text-sm text-gray-400">Crafting intuitive UX and visually compelling UI mockups.</p>
+                    </div>
+                    <div class="process-step hover-target animate-fade-in-up opacity-0 animation-delay-600">
+                         <div class="text-3xl mb-3">03</div>
+                        <h3 class="text-xl font-semibold mb-2">Development & Build</h3>
+                        <p class="text-sm text-gray-400">Bringing designs to life with clean, efficient code.</p>
+                    </div>
+                    <div class="process-step hover-target animate-fade-in-up opacity-0 animation-delay-800">
+                        <div class="text-3xl mb-3">04</div>
+                        <h3 class="text-xl font-semibold mb-2">Launch & Support</h3>
+                        <p class="text-sm text-gray-400">Deploying your site and providing ongoing assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="services-cta" class="py-20 md:py-24 bg-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading mb-6 animate-fade-in-up opacity-0">Let's Build Something Wonderful Together</h2>
+                <p class="section-subheading mb-10 animate-fade-in-up opacity-0 animation-delay-200">
+                    No matter the complexity or scale of your project, Noesis Web has the expertise to deliver.
+                    Reach out to our team in Kuwait to discuss your specific needs.
+                </p>
+                <div class="animate-fade-in-up opacity-0 animation-delay-400">
+                    <a href="contact.html" class="btn btn-dark btn-lg hover-target group">
+                        Request a Free Consultation
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-accent-gray text-light-beige py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4 md:mb-0 hover-target">
+                        <img src="img/logolight.png"" alt="Noesis Web Logo Footer" id="footer-logo-img" class="h-10 mx-auto md:mx-0 opacity-90 hover:opacity-100 transition-opacity">
+                    </a>
+                </div>
+                <div class="md:col-span-1 text-center">
+                    <p class="text-sm mb-1">&copy; <span id="current-year"></span> Noesis Web. All Rights Reserved.</p>
+                    <p class="text-xs text-gray-400">Intelligent Web Solutions in Salmiya, Kuwait.</p>
+                </div>
+                <div class="md:col-span-1 flex justify-center md:justify-end space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.594-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

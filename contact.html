@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Noesis Web | Get in Touch with Your Kuwait Web Agency</title>
+    <meta name="description" content="Contact Noesis Web, your expert web design and development agency in Kuwait. Reach out for a consultation, project quote, or any inquiries.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .animation-delay-200 { animation-delay: 0.2s; }
+          .animation-delay-400 { animation-delay: 0.4s; }
+          .animation-delay-600 { animation-delay: 0.6s; }
+          .animation-delay-800 { animation-delay: 0.8s; }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-beige': '#F5F5DC',
+                        'pure-black': '#000000',
+                        'accent-gray': '#333333',
+                        'hover-accent': '#555555',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-beige font-inter text-pure-black antialiased relative overflow-x-hidden">
+
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <header id="main-header" class="fixed top-0 left-0 w-full bg-light-beige/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="index.html" class="logo-link hover-target">
+                <img src="img/logolight.png" alt="Noesis Web Logo" id="header-logo-img" class="h-10 md:h-12 transition-transform duration-300 hover:scale-105">
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="index.html" class="nav-link hover-target">Home</a>
+                <a href="about.html" class="nav-link hover-target">About Us</a>
+                <a href="services.html" class="nav-link hover-target">Services</a>
+                <a href="portfolio.html" class="nav-link hover-target">Portfolio</a>
+                <a href="pricing.html" class="nav-link hover-target">Pricing</a>
+                <a href="contact.html" class="nav-link active hover-target">Contact</a> 
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pure-black focus:outline-none hover-target" aria-label="Open mobile menu" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-light-beige shadow-xl absolute top-full left-0 w-full" aria-hidden="true">
+            <a href="index.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Home</a>
+            <a href="about.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">About Us</a>
+            <a href="services.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Services</a>
+            <a href="portfolio.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Portfolio</a>
+            <a href="pricing.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Pricing</a>
+            <a href="contact.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20 md:pt-24">
+
+        <section id="page-header-contact" class="py-16 md:py-24 bg-pure-black text-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-up opacity-0">Get In Touch</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    We're here to answer your questions, discuss your project, or schedule a consultation. Let's connect and create something wonderful.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact-form-details" class="py-16 md:py-24 bg-light-beige">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
+                    
+                    <div class="bg-white p-8 md:p-10 rounded-xl shadow-2xl animate-slide-in-left opacity-0">
+                        <h2 class="text-2xl md:text-3xl font-bold text-pure-black mb-6">Send Us a Message</h2>
+                        <form id="appointmentForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-accent-gray mb-1">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" id="name" required class="form-input hover-target" placeholder="e.g., Ahmad Al-Fahad">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-accent-gray mb-1">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" id="email" required class="form-input hover-target" placeholder="e.g., yourname@example.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-accent-gray mb-1">Phone Number (Optional)</label>
+                                <input type="tel" name="phone" id="phone" class="form-input hover-target" placeholder="e.g., +965 1234 5678">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-semibold text-accent-gray mb-1">Service Interested In</label>
+                                <select name="service" id="service" class="form-input hover-target">
+                                    <option value="">-- Select a Service --</option>
+                                    <option value="custom-design">Custom Web Design</option>
+                                    <option value="ecommerce">E-commerce Solutions</option>
+                                    <option value="wordpress">WordPress Development</option>
+                                    <option value="shopify">Shopify Development</option>
+                                    <option value="platforms">Platform & CMS Mastery</option>
+                                    <option value="ui-ux">UI/UX Design</option>
+                                    <option value="hosting-maintenance">Hosting & Maintenance</option>
+                                    <option value="pricing_startup">Pricing: Startup Spark</option>
+                                    <option value="pricing_business">Pricing: Business Boost</option>
+                                    <option value="pricing_enterprise">Pricing: Enterprise Edge</option>
+                                    <option value="other">Other / General Inquiry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-accent-gray mb-1">Your Message / Project Details <span class="text-red-500">*</span></label>
+                                <textarea name="message" id="message" rows="5" required class="form-input hover-target" placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" id="submitBtn" class="btn btn-dark w-full hover-target group">
+                                    <span class="submit-text">Send Message</span>
+                                    <span class="loading-spinner hidden w-5 h-5 border-2 border-light-beige border-t-transparent rounded-full animate-spin mx-auto"></span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-message" class="mt-4 text-sm text-center"></div> </div>
+
+                    <div class="space-y-8 animate-slide-in-right opacity-0 animation-delay-200">
+                        <div class="bg-pure-black text-light-beige p-8 md:p-10 rounded-xl shadow-2xl">
+                            <h3 class="text-xl md:text-2xl font-bold mb-4">Our Contact Details</h3>
+                            <div class="space-y-3">
+                                <p class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <a href="mailto:hello@noesisweb.kw" class="hover-target hover:underline">hello@noesisweb.kw</a> (Example)
+                                </p>
+                                <p class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.308 1.154a11.034 11.034 0 005.37 5.37l1.154-2.308a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    <a href="tel:+96512345678" class="hover-target hover:underline">+965 1234 5678</a> (Example)
+                                </p>
+                                <p class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    <span>Salmiya, Hawalli Governorate, Kuwait<br>(Specific address placeholder)</span>
+                                </p>
+                            </div>
+                            <hr class="my-6 border-gray-700">
+                            <h4 class="text-lg font-semibold mb-2">Office Hours (Example)</h4>
+                            <p class="text-sm text-gray-300">Sunday - Thursday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-sm text-gray-300">Friday & Saturday: Closed</p>
+                        </div>
+
+                        <div class="bg-white p-1 rounded-xl shadow-2xl">
+                             <h3 class="text-xl md:text-2xl font-bold text-pure-black my-4 text-center">Our Location</h3>
+                            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222793.08439500048!2d47.83791903209109!3d29.313759527270004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9c83ce455983%3A0xc3ebaef5af09b90e!2sSalmiya!5e0!3m2!1sen!2skw!4v1680000000000!5m2!1sen!2skw" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="hover-target"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-accent-gray text-light-beige py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4 md:mb-0 hover-target">
+                        <img src="img/logolight.png" alt="Noesis Web Logo Footer" id="footer-logo-img" class="h-10 mx-auto md:mx-0 opacity-90 hover:opacity-100 transition-opacity">
+                    </a>
+                </div>
+                <div class="md:col-span-1 text-center">
+                    <p class="text-sm mb-1">© <span id="current-year"></span> Noesis Web. All Rights Reserved.</p>
+                    <p class="text-xs text-gray-400">Intelligent Web Solutions in Salmiya, Kuwait.</p>
+                </div>
+                <div class="md:col-span-1 flex justify-center md:justify-end space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.594-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // FOR LOCAL TESTING: Paste your Firebase config directly here.
+        // The Canvas environment variables (__firebase_config, etc.) will not be available locally.
+        const localFirebaseConfig = {
+            apiKey: "AIzaSyCwFxMA_RL-ToqQD-q4P1NGYStVeVtvf9E", // YOUR ACTUAL API KEY
+            authDomain: "neosis-web.firebaseapp.com",        // YOUR ACTUAL AUTH DOMAIN
+            projectId: "neosis-web",                         // YOUR ACTUAL PROJECT ID
+            storageBucket: "neosis-web.firebasestorage.app", // YOUR ACTUAL STORAGE BUCKET
+            messagingSenderId: "361597193003",               // YOUR ACTUAL SENDER ID
+            appId: "1:361597193003:web:bf5d419f97ab36632d536e", // YOUR ACTUAL APP ID
+            measurementId: "G-5R54LE6Z8M"                    // YOUR ACTUAL MEASUREMENT ID (Optional)
+        };
+        
+        // For local testing, we'll use a default app ID if __app_id is not defined.
+        // This is used for constructing Firestore paths.
+        const localAppId = "noesis-web-local-instance"; // You can change this if you like
+
+        // Make the config and appId available globally for script.js
+        window.firebaseConfigForApp = localFirebaseConfig;
+        window.initialAuthTokenForApp = null; // No initial auth token for local anonymous sign-in
+        window.appIdForApp = localAppId; 
+    </script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - Noesis Web | Web Design & Development Kuwait</title>
+    <meta name="description" content="Explore transparent pricing plans for web design, e-commerce, and custom development services from Noesis Web, your digital agency in Kuwait.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .animation-delay-200 { animation-delay: 0.2s; }
+          .animation-delay-400 { animation-delay: 0.4s; }
+          .animation-delay-600 { animation-delay: 0.6s; }
+          .animation-delay-800 { animation-delay: 0.8s; }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-beige': '#F5F5DC',
+                        'pure-black': '#000000',
+                        'accent-gray': '#333333',
+                        'hover-accent': '#555555',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-beige font-inter text-pure-black antialiased relative overflow-x-hidden">
+
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <header id="main-header" class="fixed top-0 left-0 w-full bg-light-beige/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="index.html" class="logo-link hover-target">
+                <img src="img/logolight.png" alt="Noesis Web Logo" id="header-logo-img" class="h-10 md:h-12 transition-transform duration-300 hover:scale-105">
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="index.html" class="nav-link hover-target">Home</a>
+                <a href="about.html" class="nav-link hover-target">About Us</a>
+                <a href="services.html" class="nav-link hover-target">Services</a>
+                <a href="portfolio.html" class="nav-link hover-target">Portfolio</a>
+                <a href="pricing.html" class="nav-link active hover-target">Pricing</a>
+                <a href="contact.html" class="nav-link-button btn btn-dark hover-target">Get a Quote</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pure-black focus:outline-none hover-target" aria-label="Open mobile menu" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-light-beige shadow-xl absolute top-full left-0 w-full" aria-hidden="true">
+            <a href="index.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Home</a>
+            <a href="about.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">About Us</a>
+            <a href="services.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Services</a>
+            <a href="portfolio.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Portfolio</a>
+            <a href="pricing.html" class="block py-3 px-6 text-pure-black hover:bg-pure-black hover:text-light-beige transition-colors duration-200 hover-target">Pricing</a>
+            <a href="contact.html" class="block py-4 px-6 text-light-beige bg-pure-black text-center font-semibold hover:bg-accent-gray transition-colors duration-200 hover-target">Get a Quote</a>
+        </div>
+    </header>
+
+    <main class="pt-20 md:pt-24">
+
+        <section id="page-header-pricing" class="py-16 md:py-24 bg-pure-black text-light-beige text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-up opacity-0">Our Pricing Plans</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    Transparent and flexible pricing to match your project needs and budget. Find the perfect plan to launch or elevate your digital presence.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-light-beige">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-lg text-accent-gray max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-400">
+                    At Noesis Web, we believe in providing clear, upfront pricing for our comprehensive web solutions. Our packages are designed to offer exceptional value, combining strategic insight, creative design, and robust development. For projects with unique requirements, we're always happy to provide a custom quote.
+                </p>
+            </div>
+        </section>
+
+        <section id="pricing-table" class="py-16 md:py-24 bg-light-beige">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+                    <div class="pricing-card-light flex flex-col animate-fade-in-up opacity-0 animation-delay-200 hover-target">
+                        <div class="p-8 flex-grow">
+                            <h3 class="text-2xl font-bold text-pure-black mb-3">Startup Spark</h3>
+                            <p class="text-4xl font-extrabold text-pure-black mb-1">KD 150<span class="text-lg font-semibold text-accent-gray"> onwards</span></p>
+                            <p class="text-sm text-accent-gray mb-6">Ideal for new ventures & basic online presence.</p>
+                            <hr class="my-6 border-gray-300">
+                            <ul class="space-y-3 text-sm text-accent-gray text-left mb-8">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom Landing Page or Basic Site (1-3 Pages)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Responsive Design (Mobile-Friendly)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Basic SEO Setup</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Contact Form Integration</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Standard Turnaround Time</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>1 Month Basic Support</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Basic E-Commerce Features</li>
+
+                            </ul>
+                        </div>
+                        <div class="p-8 pt-0">
+                            <a href="contact.html?package=startup" class="btn btn-dark-outline w-full hover-target">Choose Plan</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card-light popular flex flex-col transform scale-100 lg:scale-105 animate-fade-in-up opacity-0 animation-delay-400 hover-target relative">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <span class="bg-pure-black text-light-beige text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">Most Popular</span>
+                        </div>
+                        <div class="p-8 flex-grow pt-12">
+                            <h3 class="text-2xl font-bold text-pure-black mb-3">Business Boost</h3>
+                            <p class="text-4xl font-extrabold text-pure-black mb-1">KD 350<span class="text-lg font-semibold text-accent-gray"> onwards</span></p>
+                            <p class="text-sm text-accent-gray mb-6">For growing businesses needing a comprehensive site.</p>
+                             <hr class="my-6 border-gray-300">
+                            <ul class="space-y-3 text-sm text-accent-gray text-left mb-8">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom Website (Up to 7 Pages)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>WordPress or Shopify CMS</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced Responsive Design</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>On-Page SEO Optimization</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced E-commerce Features</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Social Media Integration</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>3 Months Standard Support</li>
+                            </ul>
+                        </div>
+                        <div class="p-8 pt-0">
+                            <a href="contact.html?package=business" class="btn btn-dark w-full hover-target">Choose Plan</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card-light flex flex-col animate-fade-in-up opacity-0 animation-delay-600 hover-target">
+                        <div class="p-8 flex-grow">
+                            <h3 class="text-2xl font-bold text-pure-black mb-3">Enterprise Edge</h3>
+                            <p class="text-4xl font-extrabold text-pure-black mb-1">Custom<span class="text-lg font-semibold text-accent-gray"> Quote</span></p>
+                            <p class="text-sm text-accent-gray mb-6">Tailored for complex projects & advanced needs.</p>
+                            <hr class="my-6 border-gray-300">
+                            <ul class="space-y-3 text-sm text-accent-gray text-left mb-8">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Fully Custom Design & Development</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced Shopify/WordPress or Custom App</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Dedicated Project Manager</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>API Integrations & Advanced Functionality</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Comprehensive SEO & Performance Strategy</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-pure-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Priority Support & Training</li>
+                            </ul>
+                        </div>
+                         <div class="p-8 pt-0">
+                            <a href="contact.html?package=enterprise" class="btn btn-dark-outline w-full hover-target">Request a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 md:mt-24 text-center animate-fade-in-up opacity-0 animation-delay-800">
+                    <h3 class="text-2xl font-semibold mb-4 text-pure-black">Need a Custom Solution?</h3>
+                    <p class="text-accent-gray mb-6 max-w-xl mx-auto">
+                        Every project is unique. If our standard packages don't perfectly align with your requirements,
+                        we're experts at crafting tailored solutions. Let's discuss your specific needs.
+                    </p>
+                    <a href="contact.html" class="btn btn-dark btn-lg hover-target group">
+                        Get a Custom Quote
+                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 md:py-24 bg-pure-black text-light-beige">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading-light text-center mb-12 animate-fade-in-up opacity-0">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <details class="faq-item group animate-fade-in-up opacity-0 animation-delay-200">
+                        <summary class="faq-question hover-target">What is the typical timeline for a project?</summary>
+                        <p class="faq-answer">Project timelines vary based on complexity. A Startup Spark package might take 2-4 weeks, while Business Boost can range from 4-8 weeks. Custom Enterprise projects have tailored timelines discussed during consultation.</p>
+                    </details>
+                    <details class="faq-item group animate-fade-in-up opacity-0 animation-delay-400">
+                        <summary class="faq-question hover-target">Do you offer services to clients outside Kuwait?</summary>
+                        <p class="faq-answer">Absolutely! While we are based in Kuwait, we proudly serve clients globally. We leverage digital communication tools to ensure seamless collaboration regardless of your location.</p>
+                    </details>
+                    <details class="faq-item group animate-fade-in-up opacity-0 animation-delay-600">
+                        <summary class="faq-question hover-target">What kind of support do you offer after website launch?</summary>
+                        <p class="faq-answer">Each package includes a defined support period. We also offer ongoing maintenance plans covering security updates, backups, performance checks, and technical assistance to ensure your website remains in top condition.</p>
+                    </details>
+                     <details class="faq-item group animate-fade-in-up opacity-0 animation-delay-800">
+                        <summary class="faq-question hover-target">Can you help with website hosting?</summary>
+                        <p class="faq-answer">Yes, we provide reliable web hosting solutions, including expertise with providers like Hostinger. We can help you choose the right plan and manage your hosting environment for optimal performance and security.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-accent-gray text-light-beige py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="inline-block mb-4 md:mb-0 hover-target">
+                        <img src="img/logolight.png" alt="Noesis Web Logo Footer" id="footer-logo-img" class="h-10 mx-auto md:mx-0 opacity-90 hover:opacity-100 transition-opacity">
+                    </a>
+                </div>
+                <div class="md:col-span-1 text-center">
+                    <p class="text-sm mb-1">&copy; <span id="current-year"></span> Noesis Web. All Rights Reserved.</p>
+                    <p class="text-xs text-gray-400">Intelligent Web Solutions in Salmiya, Kuwait.</p>
+                </div>
+                <div class="md:col-span-1 flex justify-center md:justify-end space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-light-beige transition-colors hover-target" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.594-11.018-3.714v-2.155z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

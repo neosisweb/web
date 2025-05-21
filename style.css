@@ -1,0 +1,617 @@
+/* style.css (Single Light Theme - Cursor Hover Fixed & Text Hover Effect) */
+
+/*
+  Table of Contents:
+  1. :root Variables & Body Reset
+  2. Custom Cursor Styles
+  3. Typography & Headings
+  4. Button Styles
+  5. Navigation & Header Styles
+  6. Section Specific Styles
+  7. Card Styles
+  8. Footer Styles
+  9. Form Input Styles (New)
+  10. Animation Keyframes & Utility Classes
+  11. Responsive Adjustments
+  12. Text Hover Effect
+*/
+
+/* 1. :root Variables & Body Reset
+--------------------------------------------- */
+:root {
+    --light-beige: #F5F5DC;
+    --pure-black: #000000;
+    --accent-gray: #333333;
+    --hover-accent: #555555; /* For general hover states on dark elements */
+    --text-hover-brightness-light-theme: #000000; /* Black text on light bg doesn't get much "brighter" than black, could be a slightly bolder font or subtle scale */
+    --text-hover-brightness-dark-theme: #ffffff; /* Whiter text on dark bg */
+    --text-inverted-on-dark-bg: #F5F5DC; /* Text color for dark background sections */
+    --accent-gray-on-dark-bg: #cccccc; /* Accent text color for dark background sections */
+    --form-input-bg: #ffffff; /* White background for form inputs for clarity */
+    --form-input-border: #cccccc; /* Softer border for form inputs */
+    --form-input-focus-border: var(--pure-black);
+    --form-input-focus-shadow: rgba(0,0,0,0.15);
+
+
+    /* Cursor Variables */
+    --cursor-size: 30px;
+    --cursor-dot-size: 8px;
+    --cursor-stroke-width: 2px;
+    --cursor-color-default: var(--pure-black); /* Cursor color on light background */
+    --cursor-color-inverted: var(--light-beige); /* Cursor color on dark background sections */
+    --cursor-hover-scale: 1.2; /* Subtle scale for general hover */
+    --cursor-dot-hover-scale: 1.8; /* Dot scales more on text hover */
+    --cursor-bg-hover-opacity: 0.05; /* Very subtle background fill */
+}
+
+/* Basic Reset & Body Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Note: Custom JS scroll is also implemented */
+    font-size: 100%; /* 16px base */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-beige);
+    color: var(--pure-black);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--pure-black);
+    color: var(--light-beige);
+}
+
+
+/* 2. Custom Cursor Styles
+--------------------------------------------- */
+.custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: var(--cursor-stroke-width) solid var(--cursor-color-default);
+    border-radius: 50%;
+    pointer-events: none; /* Crucial */
+    transform: translate(-50%, -50%) scale(1);
+    transition: width 0.2s ease-out, height 0.2s ease-out, transform 0.2s ease-out, border-color 0.2s ease-out, background-color 0.2s ease-out, border-width 0.2s ease-out;
+    z-index: 9999;
+    will-change: transform, width, height, border-color, border-width;
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--cursor-dot-size);
+    height: var(--cursor-dot-size);
+    background-color: var(--cursor-color-default);
+    border-radius: 50%;
+    pointer-events: none; /* Crucial */
+    transform: translate(-50%, -50%) scale(1);
+    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+    z-index: 9999;
+    will-change: transform, background-color;
+}
+
+/* General hover state for the outer ring */
+.custom-cursor.hovered {
+    transform: translate(-50%, -50%) scale(var(--cursor-hover-scale));
+    background-color: hsla(0, 0%, 0%, var(--cursor-bg-hover-opacity));
+}
+
+/* Specific hover state for text/interactive elements */
+.custom-cursor.text-hovered {
+    transform: translate(-50%, -50%) scale(1); /* Keep outer ring normal size or slightly smaller if border thickens */
+    border-width: 3px; /* Make border slightly thicker */
+}
+.custom-cursor-dot.text-hovered {
+    transform: translate(-50%, -50%) scale(var(--cursor-dot-hover-scale)); /* Make the dot more prominent */
+    background-color: var(--cursor-color-default); /* Ensure dot color is consistent or changes if desired */
+}
+
+/* Inverted cursor colors for dark sections */
+.on-dark-section .custom-cursor,
+footer .custom-cursor, /* Cursor over footer */
+.bg-pure-black .custom-cursor, /* Cursor over elements with bg-pure-black */
+.bg-accent-gray .custom-cursor /* Cursor over elements with bg-accent-gray */
+ {
+    border-color: var(--cursor-color-inverted);
+}
+
+.on-dark-section .custom-cursor-dot,
+footer .custom-cursor-dot,
+.bg-pure-black .custom-cursor-dot,
+.bg-accent-gray .custom-cursor-dot {
+    background-color: var(--cursor-color-inverted);
+}
+
+/* Ensure dot color also inverts correctly on text hover when on dark section */
+.on-dark-section .custom-cursor-dot.text-hovered,
+footer .custom-cursor-dot.text-hovered,
+.bg-pure-black .custom-cursor-dot.text-hovered,
+.bg-accent-gray .custom-cursor-dot.text-hovered {
+    background-color: var(--cursor-color-inverted);
+}
+.on-dark-section .custom-cursor.text-hovered,
+footer .custom-cursor.text-hovered,
+.bg-pure-black .custom-cursor.text-hovered,
+.bg-accent-gray .custom-cursor.text-hovered {
+    border-color: var(--cursor-color-inverted); /* Ensure border also inverts */
+}
+
+
+/* 3. Typography & Headings
+--------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--pure-black);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--pure-black);
+}
+.section-subheading {
+    font-size: 1.125rem;
+    color: var(--accent-gray);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+/* For sections with dark backgrounds */
+.section-heading-light {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--text-inverted-on-dark-bg);
+}
+.section-subheading-light {
+    font-size: 1.125rem;
+    color: var(--accent-gray-on-dark-bg);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .section-heading, .section-heading-light {
+        font-size: 3rem;
+    }
+    .section-subheading, .section-subheading-light {
+        font-size: 1.25rem;
+    }
+}
+
+/* 4. Button Styles
+--------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: none;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+}
+
+.btn-dark {
+    background-color: var(--pure-black);
+    color: var(--light-beige);
+    border-color: var(--pure-black);
+}
+.btn-dark:hover {
+    background-color: var(--accent-gray);
+    border-color: var(--accent-gray);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-light { /* For use on dark backgrounds */
+    background-color: var(--light-beige);
+    color: var(--pure-black);
+    border-color: var(--light-beige);
+}
+.btn-light:hover {
+    background-color: #e0e0c8; /* Slightly darker beige */
+    border-color: #e0e0c8;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(255,255,255,0.1);
+}
+
+.btn-light-outline { /* For use on dark backgrounds */
+    background-color: transparent;
+    color: var(--light-beige);
+    border-color: var(--light-beige);
+}
+.btn-light-outline:hover {
+    background-color: var(--light-beige);
+    color: var(--pure-black);
+    transform: translateY(-3px) scale(1.02);
+}
+.btn-dark-outline { /* For use on light backgrounds */
+    background-color: transparent;
+    color: var(--pure-black);
+    border-color: var(--pure-black);
+}
+.btn-dark-outline:hover {
+    background-color: var(--pure-black);
+    color: var(--light-beige);
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+/* 5. Navigation & Header Styles
+--------------------------------------------- */
+#main-header {
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: rgba(245, 245, 220, 0.8); /* light-beige with backdrop */
+}
+
+#main-header.scrolled {
+    background-color: var(--light-beige); /* More opaque on scroll */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nav-link {
+    position: relative;
+    color: var(--pure-black);
+    font-weight: 500;
+    padding: 0.5rem 0.25rem;
+    transition: color 0.3s ease, transform 0.2s ease-out; /* Added transform for text hover */
+    font-size: 0.9375rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--pure-black);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--hover-accent);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link-button {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+/* Mobile Menu Styling */
+#mobile-menu {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    background-color: var(--light-beige);
+}
+#mobile-menu a {
+    color: var(--pure-black);
+    transition: background-color 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out; /* Added transform */
+}
+#mobile-menu a:hover {
+    background-color: var(--pure-black);
+    color: var(--light-beige);
+}
+#mobile-menu a[href="contact.html"] {
+    background-color: var(--pure-black);
+    color: var(--light-beige);
+}
+#mobile-menu a[href="contact.html"]:hover {
+    background-color: var(--accent-gray);
+}
+
+/* 6. Section Specific Styles (Mainly color handled by Tailwind in HTML)
+--------------------------------------------- */
+#hero h1 {
+    letter-spacing: -0.025em;
+}
+#hero .text-accent-gray {
+    color: var(--accent-gray);
+}
+
+.bg-pure-black, .bg-accent-gray {
+    color: var(--text-inverted-on-dark-bg);
+}
+.bg-pure-black h1, .bg-pure-black h2, .bg-pure-black h3, .bg-pure-black h4,
+.bg-accent-gray h1, .bg-accent-gray h2, .bg-accent-gray h3, .bg-accent-gray h4 {
+    color: var(--text-inverted-on-dark-bg);
+}
+.bg-pure-black p, .bg-accent-gray p {
+     color: var(--accent-gray-on-dark-bg);
+}
+.bg-pure-black .text-gray-300 { /* Tailwind class override */
+    color: var(--accent-gray-on-dark-bg) !important;
+}
+
+
+/* 7. Card Styles
+--------------------------------------------- */
+.service-card-light,
+.testimonial-card-light,
+.value-card-light,
+.pricing-card-light { /* Added .pricing-card-light */
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+.service-card-light:hover,
+.testimonial-card-light:hover,
+.value-card-light:hover,
+.pricing-card-light:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.pricing-card-light.popular { /* Specific style for popular pricing card */
+     border: 2px solid var(--pure-black);
+     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-card-light h3, .service-card-light p, .service-card-light a, .service-card-light svg,
+.testimonial-card-light p, .testimonial-card-light div,
+.value-card-light h3, .value-card-light p, .value-card-light svg,
+.pricing-card-light h3, .pricing-card-light p, .pricing-card-light ul li {
+    color: var(--pure-black);
+}
+.service-card-light .text-accent-gray,
+.testimonial-card-light .text-accent-gray,
+.value-card-light .text-accent-gray,
+.pricing-card-light .text-accent-gray {
+    color: var(--accent-gray);
+}
+.testimonial-card-light .font-semibold,
+.pricing-card-light .font-semibold {
+     color: var(--pure-black);
+}
+.pricing-card-light .check-icon { /* For pricing feature list */
+    color: var(--pure-black);
+    margin-right: 0.5rem; /* Tailwind uses 'mr-2' for this: space-x-0.5rem */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.pricing-card-light ul li {
+    display: flex; /* Align icon and text */
+    align-items: flex-start; /* Align top for multi-line text */
+    text-align: left;
+}
+
+
+.differentiator-card {
+    background-color: rgba(245, 245, 220, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 245, 220, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.differentiator-card:hover {
+    background-color: rgba(245, 245, 220, 0.08);
+    border-color: rgba(245, 245, 220, 0.15);
+}
+.differentiator-card h3, .differentiator-card svg {
+    color: var(--text-inverted-on-dark-bg);
+}
+.differentiator-card p {
+    color: var(--accent-gray-on-dark-bg);
+}
+
+/* Portfolio Card Specifics */
+.portfolio-item-card .relative img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.portfolio-item-card:hover .relative img {
+    transform: scale(1.1);
+}
+.portfolio-item-card .absolute {
+    transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* FAQ Item Styles (from pricing.html) */
+.faq-item summary {
+    font-weight: 600;
+    padding: 1rem;
+    background-color: rgba(245, 245, 220, 0.05);
+    border: 1px solid rgba(245, 245, 220, 0.1);
+    border-radius: 8px;
+    color: var(--text-inverted-on-dark-bg);
+    transition: background-color 0.2s ease;
+    list-style: none; /* Remove default marker */
+    position: relative;
+    padding-right: 2.5rem; /* Space for custom marker */
+}
+.faq-item summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
+.faq-item summary::marker { display: none; } /* Firefox */
+
+.faq-item summary:hover {
+    background-color: rgba(245, 245, 220, 0.1);
+}
+.faq-item summary::after { /* Custom marker */
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    font-weight: 300;
+    transition: transform 0.2s ease-out;
+}
+.faq-item[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+.faq-answer {
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid rgba(245, 245, 220, 0.1);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    color: var(--accent-gray-on-dark-bg);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+
+/* 8. Footer Styles
+--------------------------------------------- */
+footer {
+    background-color: var(--accent-gray);
+    color: var(--text-inverted-on-dark-bg);
+}
+footer a {
+    color: var(--accent-gray-on-dark-bg);
+    transition: color 0.3s ease, transform 0.2s ease-out;
+}
+footer a:hover {
+    color: var(--text-inverted-on-dark-bg);
+}
+footer .text-gray-400 {
+    color: var(--accent-gray-on-dark-bg) !important;
+}
+
+/* 9. Form Input Styles (New / Enhanced)
+--------------------------------------------- */
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1rem; /* 14px 16px */
+    font-size: 1rem; /* 16px */
+    font-family: 'Inter', sans-serif;
+    color: var(--pure-black);
+    background-color: var(--form-input-bg);
+    border: 2px solid var(--form-input-border);
+    border-radius: 8px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    appearance: none; /* Remove default styling for select, etc. */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--form-input-focus-border);
+    box-shadow: 0 0 0 3px var(--form-input-focus-shadow);
+}
+
+select.form-input {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.75em auto; /* Adjusted size for better proportion */
+    padding-right: 3rem; /* Make space for the arrow */
+}
+/* Styling for the actual dropdown options is very limited and browser-dependent */
+select.form-input option {
+    background-color: var(--form-input-bg); /* Usually doesn't work on options panel */
+    color: var(--pure-black);
+}
+
+
+/* 10. Animation Keyframes & Utility Classes
+--------------------------------------------- */
+.opacity-0 {
+    opacity: 0;
+}
+.is-visible {
+    opacity: 1 !important;
+}
+.animate-on-scroll.animate-fade-in-up.is-visible { animation-name: fadeInUp; }
+.animate-on-scroll.animate-slide-in-left.is-visible { animation-name: slideInLeft; }
+.animate-on-scroll.animate-slide-in-right.is-visible { animation-name: slideInRight; }
+.animate-on-scroll.animate-fade-in.is-visible { animation-name: fadeIn; }
+
+
+/* 11. Responsive Adjustments
+--------------------------------------------- */
+@media (max-width: 767px) { /* Mobile specific adjustments */
+    #hero h1 { font-size: 3rem; }
+    #hero p { font-size: 1rem; }
+    .section-heading, .section-heading-light { font-size: 2rem; }
+    .section-subheading, .section-subheading-light { font-size: 1rem; margin-bottom: 2rem; }
+    .btn-lg { padding: 0.875rem 1.75rem; font-size: 0.9375rem; }
+    .service-card-light, .testimonial-card-light, .value-card-light, .pricing-card-light { padding: 1.5rem 1rem; }
+}
+
+/* 12. Text Hover Effect
+--------------------------------------------- */
+p:not(a p):hover,
+li:not(a li):hover,
+.section-subheading:hover,
+.section-subheading-light:hover {
+    color: var(--pure-black);
+    transform: scale(1.08);
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+}
+
+.bg-pure-black p:not(a p):hover,
+.bg-accent-gray p:not(a p):hover,
+footer p:not(a p):hover,
+.differentiator-card p:hover {
+    color: var(--text-inverted-on-dark-bg);
+    transform: scale(1.08);
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+}
+
+a.nav-link:hover,
+.service-card-light a:hover,
+footer a:hover {
+    transform: scale(1.08);
+}
+
+.btn:hover {
+    /* transform is already handled by button styles, no additional scale needed here */
+}
+
+/* Styling for FAQ items from pricing.html, if not already covered */
+.process-step { /* From services.html */
+    padding: 1.5rem;
+    border: 1px solid rgba(245, 245, 220, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.process-step:hover {
+    background-color: rgba(245, 245, 220, 0.05);
+    transform: translateY(-5px);
+}
+.process-step h3, .process-step div {
+    color: var(--text-inverted-on-dark-bg);
+}
+.process-step p {
+    color: var(--accent-gray-on-dark-bg);
+}
