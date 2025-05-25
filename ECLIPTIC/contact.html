@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ECLIPTIC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/winterlook.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic inline styles for quick setup, can be moved to style.css */
+        .icon-contact-reboot { display: inline-block; width: 1.3em; height: 1.3em; margin-right: 12px; vertical-align: middle; }
+        .icon-location-reboot svg, .icon-phone-reboot svg, .icon-email-reboot svg { fill: var(--primary-color, #FFFFFF); width: 100%; height: 100%; }
+        .unavailable-modal, .cart-popup { display: none; }
+        .toast-message { opacity: 0; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="custom-cursor"></div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ECLIPTIC</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="collections.html" class="nav-link">Collections</a></li>
+                    <li><a href="journal.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+                <a href="#" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+                <a href="#" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                <a href="cart.html" class="header-cart-trigger" aria-label="Shopping Bag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> <span class="cart-count" id="headerCartCount">0</span></a>
+            </div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="contact-page-reboot">
+        <div class="container contact-page-container-reboot">
+            <div class="contact-header-reboot">
+                <h1 class="contact-title-reboot">Connect With Us</h1>
+                <p class="contact-subtitle-reboot">Your feedback, questions, and ideas are important to us. Reach out, and let's shape the future of style together.</p>
+            </div>
+
+            <div class="contact-content-wrapper-reboot">
+                <div class="contact-form-section-reboot">
+                    <h2 class="form-title-reboot">Send a Direct Message</h2>
+                    <form id="eclipticContactFormReboot" class="contact-form-reboot">
+                        <div class="form-group-reboot">
+                            <label for="contactNameReboot" class="form-label-reboot">Full Name</label>
+                            <input type="text" id="contactNameReboot" name="name" class="form-input-reboot" required placeholder="e.g., Alex Chen">
+                        </div>
+                        <div class="form-group-reboot">
+                            <label for="contactEmailReboot" class="form-label-reboot">Email Address</label>
+                            <input type="email" id="contactEmailReboot" name="email" class="form-input-reboot" required placeholder="e.g., alex.chen@example.com">
+                        </div>
+                        <div class="form-group-reboot">
+                            <label for="contactSubjectReboot" class="form-label-reboot">Subject</label>
+                            <input type="text" id="contactSubjectReboot" name="subject" class="form-input-reboot" required placeholder="e.g., Inquiry about Spring Collection">
+                        </div>
+                        <div class="form-group-reboot">
+                            <label for="contactMessageReboot" class="form-label-reboot">Your Message</label>
+                            <textarea id="contactMessageReboot" name="message" class="form-textarea-reboot" rows="6" required placeholder="Type your detailed message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit-contact-reboot">Send Message</button>
+                    </form>
+                    <div id="formStatusMessageReboot" class="form-status-reboot"></div>
+                </div>
+
+                <div class="contact-info-section-reboot">
+                    <h2 class="info-title-reboot">Our Contact Points</h2>
+                    <p class="info-intro-reboot">Alternatively, you can connect with us through these channels:</p>
+                    <ul class="contact-details-list-reboot">
+                        <li>
+                            <span class="icon-contact-reboot icon-location-reboot">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                            </span>
+                            <div>
+                                <strong>Studio Address:</strong>
+                                <p>Unit 7, The Design Quarter, Metropolis, ST 10001</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon-contact-reboot icon-phone-reboot">
+                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                            </span>
+                            <div>
+                                <strong>Client Services:</strong>
+                                <p><a href="tel:+1555010203">+1 (555) 010-203</a></p>
+                            </div>
+                        </li>
+                        <li>
+                           <span class="icon-contact-reboot icon-email-reboot">
+                               <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                           </span>
+                           <div>
+                                <strong>Email Support:</strong>
+                                <p><a href="mailto:connect@ecliptic.com">connect@ecliptic.com</a></p>
+                           </div>
+                        </li>
+                    </ul>
+                    <div class="business-hours-reboot">
+                        <h3>Operating Hours (GMT)</h3>
+                        <p>Monday - Friday: 10:00 - 18:00</p>
+                        <p>Saturday: 11:00 - 16:00</p>
+                        <p>Sunday & Public Holidays: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-section-reboot">
+                <h2 class="map-title-reboot">Our Location</h2>
+                <div class="map-placeholder-reboot">
+                    <img src="https://placehold.co/1200x450/0a0a0a/222222?text=Interactive+Map+Area" alt="Map showing ECLIPTIC studio location" style="width:100%; height:auto; border-radius: 6px;" onerror="this.src='https://placehold.co/1200x450/1a1a1a/404040?text=Image+Error'">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; <span id="currentYear"></span> ECLIPTIC. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping & Returns</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-popup-overlay"></div>
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Your Cart</h2>
+                <button id="closeCartPopupBtn" class="close-cart-popup-btn" aria-label="Close cart">&times;</button>
+            </div>
+            <div id="popupCartItemsContainer" class="popup-cart-items-list"></div>
+            <div class="cart-popup-summary" id="popupCartSummaryContainer">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="popupCartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="popupCartTotal">$0.00</span>
+                </div>
+                <button class="btn-pdp btn-checkout-popup" id="popupProceedToCheckoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="featureUnavailableModal" class="unavailable-modal">
+        <div class="unavailable-modal-content">
+            <h3>Feature Unavailable</h3>
+            <p>This feature is currently unavailable in the demo version. Thank you for your understanding.</p>
+            <button id="closeUnavailableModalBtnPopup" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="toastMessage" class="toast-message"></div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Contact Page Specific: Basic form submission handling (client-side only for demo)
+        const contactFormReboot = document.getElementById('eclipticContactFormReboot');
+        const formStatusMessageReboot = document.getElementById('formStatusMessageReboot');
+
+        if (contactFormReboot && formStatusMessageReboot) {
+            contactFormReboot.addEventListener('submit', function(e) {
+                e.preventDefault();
+                formStatusMessageReboot.textContent = 'Thank you! Your message has been received.';
+                formStatusMessageReboot.style.color = 'var(--accent-color)'; // Use accent color for success
+                formStatusMessageReboot.style.display = 'block';
+                contactFormReboot.reset();
+
+                setTimeout(() => {
+                    formStatusMessageReboot.style.display = 'none';
+                }, 6000);
+            });
+        }
+    </script>
+</body>
+</html>

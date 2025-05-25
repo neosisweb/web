@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - ECLIPTIC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/winterlook.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic inline styles for quick setup, can be moved to style.css */
+        .unavailable-modal, .cart-popup { display: none; }
+        .toast-message { opacity: 0; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="custom-cursor"></div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ECLIPTIC</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="collections.html" class="nav-link active">Collections</a></li>
+                    <li><a href="journal.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+                <a href="#" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+                <a href="#" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                <a href="cart.html" class="header-cart-trigger" aria-label="Shopping Bag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> <span class="cart-count" id="headerCartCount">0</span></a>
+            </div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="collections-page">
+        <section class="collection-hero-section-v2 content-section"> <div class="container collection-hero-container-v2">
+                <div class="collection-hero-image-v2">
+                    <img src="https://placehold.co/700x850/0c0c0c/333333?text=Spring+Collection+Model" alt="Model showcasing Spring 2024 Collection" onerror="this.src='https://placehold.co/700x850/1a1a1a/404040?text=Image+Error'">
+                </div>
+                <div class="collection-hero-text-v2">
+                    <div class="hero-text-block"> <h1 class="hero-title-main">NEW<br>COLLECTION</h1>
+                        <p class="hero-subtitle-season">SPRING 2024</p>
+                    </div>
+                    <a href="shop.html?collection=spring2024" class="btn-pdp btn-shop-now-v2">SHOP NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ready-to-wear-collection" class="ready-to-wear-section-v2 content-section">
+            <div class="container">
+                <div class="section-header-collections-v2">
+                    <h2 class="section-title-alt-v2">READY-TO-WEAR</h2>
+                    <a href="shop.html?category=ready-to-wear" class="see-more-link-v2">see more &rarr;</a>
+                </div>
+                <div class="product-grid-collections-v2" id="collectionReadyToWearGrid">
+                    <div class="product-item-collection-v2">
+                        <a href="product-detail.html?id=twisted-ideid" class="product-link-v2">
+                            <img src="https://placehold.co/350x460/181818/404040?text=Twisted+Ideid" alt="Twisted Ideid" onerror="this.src='https://placehold.co/350x460/1a1a1a/404040?text=Image+Error'">
+                            <div class="product-info-collection-v2">
+                                <h3>twisted ideid</h3>
+                                <p>2500 $</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-item-collection-v2">
+                        <a href="product-detail.html?id=layered-kled" class="product-link-v2">
+                            <img src="https://placehold.co/350x460/181818/404040?text=Layered+Kled" alt="Layered Kled" onerror="this.src='https://placehold.co/350x460/1a1a1a/404040?text=Image+Error'">
+                            <div class="product-info-collection-v2">
+                                <h3>layered kled</h3>
+                                <p>1200 $</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-item-collection-v2">
+                        <a href="product-detail.html?id=leather-bomber-collection" class="product-link-v2">
+                            <img src="https://placehold.co/350x460/181818/404040?text=Leather+Bomber" alt="Leather Bomber" onerror="this.src='https://placehold.co/350x460/1a1a1a/404040?text=Image+Error'">
+                            <div class="product-info-collection-v2">
+                                <h3>leather bomber</h3>
+                                <p>7200 $</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-item-collection-v2">
+                        <a href="product-detail.html?id=black-turtleneck-collection" class="product-link-v2">
+                            <img src="https://placehold.co/350x460/181818/404040?text=Black+Turtleneck" alt="Black Turtleneck" onerror="this.src='https://placehold.co/350x460/1a1a1a/404040?text=Image+Error'">
+                            <div class="product-info-collection-v2">
+                                <h3>black turtleneck</h3>
+                                <p>1950 $</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-lookbook-section-v2 content-section">
+            <div class="container categories-lookbook-container-v2">
+                <div class="categories-panel-v2">
+                    <h2 class="section-title-alt-v2">CATEGORIES</h2>
+                    <ul class="category-list-v2">
+                        <li><a href="shop.html?category=clothes">CLOTHES /</a></li>
+                        <li><a href="shop.html?category=shoes">SHOES /</a></li>
+                        <li><a href="shop.html?category=bags">BAGS /</a></li>
+                        <li><a href="shop.html?category=accessories">ACCESSORIES /</a></li>
+                    </ul>
+                </div>
+                <div class="lookbook-panel-v2">
+                    <h2 class="section-title-alt-v2 lookbook-title-v2">LOOKBOOK</h2>
+                    <div class="lookbook-item-v2">
+                        <a href="journal.html?article=spring2024-lookbook"> <img src="https://placehold.co/450x600/181818/404040?text=Lookbook+Robe" alt="Lookbook - Robe" onerror="this.src='https://placehold.co/450x600/1a1a1a/404040?text=Image+Error'">
+                        </a>
+                        <div class="lookbook-caption-v2">
+                            <h3>Robe</h3> <p>The Spring Collection embodies a spirit of refined ease and contemporary silhouettes, thoughtfully designed for the modern individual's expression of self.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; <span id="currentYear"></span> ECLIPTIC. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping & Returns</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-popup-overlay"></div>
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Your Cart</h2>
+                <button id="closeCartPopupBtn" class="close-cart-popup-btn" aria-label="Close cart">&times;</button>
+            </div>
+            <div id="popupCartItemsContainer" class="popup-cart-items-list"></div>
+            <div class="cart-popup-summary" id="popupCartSummaryContainer">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="popupCartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="popupCartTotal">$0.00</span>
+                </div>
+                <button class="btn-pdp btn-checkout-popup" id="popupProceedToCheckoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="featureUnavailableModal" class="unavailable-modal">
+        <div class="unavailable-modal-content">
+            <h3>Feature Unavailable</h3>
+            <p>This feature is currently unavailable in the demo version. Thank you for your understanding.</p>
+            <button id="closeUnavailableModalBtnPopup" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="toastMessage" class="toast-message"></div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

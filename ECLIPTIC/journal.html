@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - ECLIPTIC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/winterlook.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic inline styles for quick setup, can be moved to style.css */
+        .icon-arrow-journal { transform: rotate(-45deg); border: solid var(--primary-color, #FFFFFF); border-width: 0 2px 2px 0; display: inline-block; padding: 3px; margin-left: 5px;}
+        .icon-mail-journal { display: inline-block; width: 22px; height: 22px; background-color: var(--background-color-content-blocks, #000000); mask: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23FFFFFF%22%3E%3Cpath d=%22M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z%22/%3E%3C/svg%3E') no-repeat center / contain; }
+        .icon-plus-journal { display: inline-block; width: 1em; height: 1em; line-height: 1em; text-align: center; font-weight: bold; }
+
+        .unavailable-modal, .cart-popup { display: none; }
+        .toast-message { opacity: 0; }
+    </style>
+</head>
+<body class="dark-theme journal-page-reboot"> <div class="custom-cursor"></div>
+
+    <header class="site-header"> <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ECLIPTIC</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="collections.html" class="nav-link">Collections</a></li>
+                    <li><a href="journal.html" class="nav-link active">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+                <a href="#" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+                <a href="#" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                <a href="cart.html" class="header-cart-trigger" aria-label="Shopping Bag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> <span class="cart-count" id="headerCartCount">0</span></a>
+            </div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="journal-page-reboot">
+        <div class="container journal-page-header-container">
+            <h1 class="journal-main-title-reboot">ECLIPTIC JOURNAL</h1> <div class="contact-bar-journal-reboot">
+                <a href="contact.html" class="btn-journal-reboot btn-contact-journal-reboot">Contact Us</a>
+                <a href="mailto:info@ecliptic.com" class="btn-icon-journal-reboot" aria-label="Email Us"><span class="icon-mail-journal"></span></a>
+            </div>
+        </div>
+
+        <section class="featured-grid-section-reboot">
+            <div class="container">
+                <div class="featured-grid-journal-reboot">
+                    <div class="grid-panel-reboot panel-new-arrivals-reboot">
+                        <img src="https://placehold.co/600x800/1a1a1a/454545?text=Journal+Feature+1" alt="New Arrivals Feature" class="panel-img-reboot">
+                        <div class="panel-overlay-reboot">
+                            <div class="panel-tag-reboot">#NEW STYLES</div>
+                            <p>Fresh drops: See what's new and now.</p>
+                            <a href="shop.html?filter=new" class="panel-link-reboot">Explore More <span class="icon-arrow-journal"></span></a>
+                        </div>
+                    </div>
+
+                    <div class="grid-panel-reboot panel-collections-reboot">
+                         <img src="https://placehold.co/800x550/1c1c1c/505050?text=Journal+Feature+2" alt="Collections Feature" class="panel-img-reboot">
+                         <div class="panel-overlay-bottom-reboot">
+                            <div class="panel-tag-reboot panel-tag-large-reboot">#COLLECTIONS_25</div>
+                         </div>
+                    </div>
+
+                    <div class="grid-panel-reboot panel-text-reboot panel-faq-reboot">
+                        <div class="panel-tag-reboot">#SUPPORT</div>
+                        <h3>QUESTIONS?</h3>
+                        <p>Our support team is here to help with any inquiries.</p>
+                        <a href="contact.html#faq" class="popular-tag-journal-reboot">View FAQ</a>
+                    </div>
+
+                    <div class="grid-panel-reboot panel-quality-reboot">
+                        <img src="https://placehold.co/400x300/202020/555555?text=Journal+Feature+3" alt="Quality Detail" class="panel-img-reboot">
+                        <div class="panel-overlay-centered-reboot">
+                            <div class="panel-tag-reboot">#CRAFTSMANSHIP</div>
+                            <a href="journal.html?article=quality-focus" class="panel-icon-link-reboot"><span class="icon-plus-journal">+</span></a>
+                        </div>
+                    </div>
+
+                    <div class="grid-panel-reboot panel-text-reboot panel-stats-reboot">
+                        <div class="stats-number-reboot">7.5K+</div>
+                        <p>Styles curated for the modern aesthetic.</p>
+                        <a href="shop.html" class="panel-link-reboot">Discover All <span class="icon-arrow-journal"></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-journal-posts-section-reboot">
+            <div class="container">
+                <h2 class="section-title-journal-reboot">FROM THE EDITORIAL DESK</h2>
+                <div class="journal-post-list-reboot">
+                    <article class="journal-post-item-reboot">
+                        <a href="journal.html?article=minimalist-streetwear" class="post-link-journal-reboot">
+                            <img src="https://placehold.co/600x400/1a1a1a/6c6c6c?text=Editorial+1" alt="Minimalist Streetwear" class="post-image-journal-reboot">
+                            <div class="post-content-journal-reboot">
+                                <span class="post-category-reboot">Style Guide</span>
+                                <h3 class="post-title-journal-reboot">The Enduring Appeal of Minimalist Streetwear</h3>
+                                <p class="post-excerpt-journal-reboot">How clean lines and subtle details are redefining urban fashion for the discerning individual...</p>
+                                <span class="post-readmore-journal-reboot">Read More &rarr;</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="journal-post-item-reboot">
+                         <a href="journal.html?article=sustainable-fashion" class="post-link-journal-reboot">
+                            <img src="https://placehold.co/600x400/1a1a1a/6c6c6c?text=Editorial+2" alt="Sustainable Fashion" class="post-image-journal-reboot">
+                            <div class="post-content-journal-reboot">
+                                <span class="post-category-reboot">Conscious Choices</span>
+                                <h3 class="post-title-journal-reboot">The Future is Green: Sustainable Fashion Forward</h3>
+                                <p class="post-excerpt-journal-reboot">Exploring eco-friendly materials and ethical practices that don't compromise on high design...</p>
+                                <span class="post-readmore-journal-reboot">Read More &rarr;</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="journal-post-item-reboot">
+                         <a href="journal.html?article=iconic-footwear" class="post-link-journal-reboot">
+                            <img src="https://placehold.co/600x400/1a1a1a/6c6c6c?text=Editorial+3" alt="Iconic Footwear" class="post-image-journal-reboot">
+                            <div class="post-content-journal-reboot">
+                                <span class="post-category-reboot">Retrospective</span>
+                                <h3 class="post-title-journal-reboot">Decades of Design: Iconic Footwear That Shaped Style</h3>
+                                <p class="post-excerpt-journal-reboot">A curated look back at the sneakers and boots that became cultural touchstones...</p>
+                                <span class="post-readmore-journal-reboot">Read More &rarr;</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; <span id="currentYear"></span> ECLIPTIC. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping & Returns</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-popup-overlay"></div>
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Your Cart</h2>
+                <button id="closeCartPopupBtn" class="close-cart-popup-btn" aria-label="Close cart">&times;</button>
+            </div>
+            <div id="popupCartItemsContainer" class="popup-cart-items-list"></div>
+            <div class="cart-popup-summary" id="popupCartSummaryContainer">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="popupCartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="popupCartTotal">$0.00</span>
+                </div>
+                <button class="btn-pdp btn-checkout-popup" id="popupProceedToCheckoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="featureUnavailableModal" class="unavailable-modal">
+        <div class="unavailable-modal-content">
+            <h3>Feature Unavailable</h3>
+            <p>This feature is currently unavailable in the demo version. Thank you for your understanding.</p>
+            <button id="closeUnavailableModalBtnPopup" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="toastMessage" class="toast-message"></div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - ECLIPTIC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/winterlook.png" type="image/png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* In-Page CSS for Product Detail Page Specific Fixes & Layout */
+      :root {
+        /* Define fallback if external CSS variables aren't loading */
+        --header-height: 70px;
+        --primary-color: #ffffff;
+        --secondary-color: #a0a0a0;
+        --background-color-content-blocks: #000000;
+        --panel-bg-color: #0a0a0a;
+        --border-color-subtle: #222222;
+        --accent-color: #ffa500;
+      }
+
+      body.dark-theme {
+        /* Ensure base dark theme if not already applied */
+        background-color: var(--background-color-content-blocks, #000);
+        color: var(--primary-color, #fff);
+      }
+
+      /* Critical Fix for Header Gap */
+      main#product-detail-page {
+        padding-top: var(
+          --header-height,
+          70px
+        ) !important; /* Force padding for header */
+        padding-bottom: 50px; /* Ensure some bottom padding */
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding is included correctly */
+      }
+
+      .product-detail-container-reboot {
+        display: grid;
+        grid-template-columns: 1fr; /* Mobile first: single column */
+        gap: 30px;
+        max-width: 1350px;
+        margin: 0 auto;
+        padding-left: 15px; /* Consistent with .container */
+        padding-right: 15px; /* Consistent with .container */
+      }
+
+      .product-gallery-reboot {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%; /* Prevent overflow */
+      }
+      .main-image-container-reboot {
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color-subtle, #222);
+        background-color: var(--panel-bg-color, #0a0a0a);
+        position: relative;
+        overflow: hidden; /* Prevent image from breaking out */
+      }
+      .main-image-container-reboot img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        max-height: 600px; /* Control max height */
+        object-fit: cover;
+        display: block;
+      }
+      .thumbnail-gallery-reboot {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 8px;
+      }
+      .thumbnail-image {
+        /* Assuming this class is used by JS */
+        width: 10%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        cursor: pointer;
+        border: 1px solid var(--border-color-subtle, #222);
+        opacity: 0.6;
+      }
+      .thumbnail-image.active,
+      .thumbnail-image:hover {
+        opacity: 1;
+        border-color: var(--primary-color, #fff);
+      }
+
+      .product-info-details-reboot {
+        padding-left: 0; /* No extra padding on mobile stack */
+      }
+      .product-brand-sku-reboot {
+        font-size: 0.75rem;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .pdp-product-name-reboot {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .pdp-product-price-reboot {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--primary-color);
+        margin-bottom: 25px;
+      }
+
+      .product-options-reboot {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+        align-items: stretch;
+      }
+      .option-group-reboot {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+      }
+      .option-label-reboot {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+      }
+      .quantity-input-reboot,
+      .size-select-reboot {
+        background-color: var(--panel-bg-color);
+        color: var(--primary-color);
+        border: 1px solid var(--border-color-subtle);
+        padding: 10px 12px;
+        font-size: 1rem;
+        border-radius: 3px;
+        width: 100%;
+      }
+      .quantity-input-reboot {
+        max-width: 100px;
+        text-align: center;
+      }
+
+      .pdp-actions-reboot {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+      .btn-pdp-reboot {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+      }
+      .btn-add-to-cart-reboot {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+      }
+      .btn-buy-now-reboot {
+        background-color: var(--accent-color);
+        color: var(--background-color-content-blocks);
+        border: 1px solid var(--accent-color);
+      }
+
+      .product-accordions-reboot {
+        border-top: 1px solid var(--border-color-subtle);
+      }
+      .accordion-item-reboot {
+        border-bottom: 1px solid var(--border-color-subtle);
+      }
+      .accordion-button-reboot {
+        background-color: transparent;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: 16px 0;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .accordion-button-reboot::after {
+        content: "+";
+        font-size: 1.5em;
+        color: var(--secondary-color);
+        float: right;
+        transition: transform 0.2s ease-in-out;
+      }
+      .accordion-button-reboot.active::after {
+        content: "\2013";
+      }
+      .accordion-content-reboot {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease-out, padding 0.35s ease-out,
+          opacity 0.35s ease-out;
+        color: var(--secondary-color);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      .accordion-button-reboot.active + .accordion-content-reboot {
+        padding-top: 8px;
+        padding-bottom: 18px;
+        opacity: 1; /* Ensure content is visible when expanded */
+      }
+
+      /* Related Products Section - Basic Containment */
+      .related-products-section-reboot {
+        padding: 40px 0;
+        border-top: 1px solid var(--border-color-subtle, #222);
+        margin-top: 40px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .related-products-title-reboot {
+        font-size: 1.5rem; /* Adjusted for mobile */
+        font-weight: 600;
+        color: var(--primary-color, #fff);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .related-products-grid-reboot {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(150px, 1fr)
+        ); /* Responsive grid */
+        gap: 15px;
+        padding-left: 15px; /* Consistent with .container */
+        padding-right: 15px; /* Consistent with .container */
+      }
+      .related-product-item {
+        /* Assuming this class is used by JS */
+        background-color: var(--panel-bg-color, #0a0a0a);
+        border: 1px solid var(--border-color-subtle, #222);
+        border-radius: 4px;
+        padding: 10px;
+        text-align: left;
+        max-width: 100%; /* Ensure it doesn't overflow its grid cell */
+      }
+      .related-product-item img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        margin-bottom: 8px;
+      }
+      .related-product-item h4 {
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+        color: var(--primary-color, #fff);
+      }
+      .related-product-item p {
+        font-size: 0.8rem;
+        color: var(--secondary-color, #a0a0a0);
+      }
+
+      /* Footer specific styles from PDP reference (if needed here, otherwise from global) */
+      .footer-cta-section {
+        text-align: center;
+        padding: 40px 15px;
+        border-top: 1px solid var(--border-color-subtle);
+        border-bottom: 1px solid var(--border-color-subtle);
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+      .footer-cta-section h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .footer-cta-section h3 .highlight-text {
+        font-weight: 300;
+      }
+      .footer-cta-section p {
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+      .footer-subscribe-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 10px;
+      }
+      .footer-subscribe-form input[type="email"] {
+        flex-grow: 1;
+        padding: 12px 15px;
+        background-color: var(--panel-bg-color);
+        border: 1px solid var(--border-color-subtle);
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        border-radius: 3px;
+      }
+      .footer-subscribe-form button {
+        padding: 12px 25px;
+        background-color: var(--primary-color);
+        color: var(--background-color-content-blocks);
+        border: 1px solid var(--primary-color);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .footer-links-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 0;
+        text-align: center;
+      }
+      .footer-links-main h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .footer-links-main ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-links-main li {
+        margin-bottom: 8px;
+      }
+      .footer-links-main a {
+        color: var(--secondary-color);
+        font-size: 0.8rem;
+      }
+      .footer-logo-small {
+        margin-top: 20px;
+      }
+      .footer-logo-small img {
+        opacity: 0.6;
+        max-width: 70px;
+        margin: 0 auto;
+      }
+      .footer-bottom-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color-subtle);
+        font-size: 0.7rem;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+        gap: 10px;
+      }
+
+      /* Desktop Overrides for PDP (add more as needed from full style.css) */
+      @media (min-width: 769px) {
+        main#product-detail-page {
+          /* Desktop padding can be different if needed, but var(--header-height) is key */
+        }
+        .product-detail-container-reboot {
+          grid-template-columns: 0.9fr 1.1fr; /* Two columns on desktop */
+          gap: 60px;
+        }
+        .main-image-container-reboot img {
+          max-height: 750px;
+        }
+        .product-info-details-reboot {
+          padding-left: 15px;
+        }
+        .pdp-product-name-reboot {
+          font-size: 2rem;
+        }
+        .pdp-product-price-reboot {
+          font-size: 1.6rem;
+        }
+        .product-options-reboot {
+          flex-direction: row;
+          align-items: center;
+        }
+        .option-group-reboot {
+          flex-direction: row;
+          width: auto;
+        }
+        .quantity-input-reboot,
+        .size-select-reboot {
+          width: auto;
+        }
+        .pdp-actions-reboot {
+          flex-direction: row;
+        }
+
+        .related-products-grid-reboot {
+          grid-template-columns: repeat(4, 1fr); /* 4 on desktop */
+        }
+        .footer-subscribe-form {
+          flex-direction: row;
+          gap: 0;
+        }
+        .footer-subscribe-form input[type="email"] {
+          border-radius: 3px 0 0 3px;
+          border-right: none;
+        }
+        .footer-subscribe-form button {
+          border-radius: 0 3px 3px 0;
+        }
+        .footer-links-main {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          text-align: left;
+        }
+        .footer-logo-small {
+          margin-top: 0;
+        }
+        .footer-logo-small img {
+          margin: 0;
+        }
+        .footer-bottom-bar {
+          flex-direction: row;
+        }
+      }
+
+      /* Global modal, toast, cart popup styles are assumed to be in style.css */
+      /* Fallback for global elements if external CSS fails to load them */
+      .unavailable-modal,
+      .cart-popup {
+        display: none; /* Ensure hidden by default */
+      }
+      .toast-message {
+        opacity: 0; /* Ensure hidden by default */
+      }
+    </style>
+  </head>
+  <body class="dark-theme">
+    <div class="custom-cursor"></div>
+
+    <header class="site-header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">ECLIPTIC</a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="journal.html" class="nav-link">Journal</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="#" aria-label="Search"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg
+          ></a>
+          <a href="#" aria-label="Wishlist"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path></svg
+          ></a>
+          <a href="#" aria-label="Account"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle></svg
+          ></a>
+          <a
+            href="cart.html"
+            class="header-cart-trigger"
+            aria-label="Shopping Bag"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count" id="headerCartCount">0</span></a
+          >
+        </div>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+<br>
+    <main id="product-detail-page">
+      <div class="container product-detail-container-reboot">
+        <div class="product-gallery-reboot">
+          <div class="main-image-container-reboot">
+            <img
+              id="mainProductImage"
+              src="https://placehold.co/700x900/0c0c0c/333333?text=Loading..."
+              alt="Product Image"
+            />
+          </div>
+          <div class="thumbnail-gallery-reboot" id="thumbnailGallery"></div>
+        </div>
+
+        <div class="product-info-details-reboot">
+          <div class="product-brand-sku-reboot">
+            <span id="productBrand">CAPSULA</span> /
+            <span id="productSKU">ITEM#000000</span>
+          </div>
+          <h1 id="productName" class="pdp-product-name-reboot">
+            Product Name Loading...
+          </h1>
+          <p id="productPrice" class="pdp-product-price-reboot">$0.00</p>
+
+          <div class="product-options-reboot">
+            <div class="option-group-reboot">
+              <label for="productQuantity" class="option-label-reboot"
+                >QTY:</label
+              >
+              <input
+                type="number"
+                id="productQuantity"
+                name="quantity"
+                value="1"
+                min="1"
+                class="quantity-input-reboot"
+              />
+            </div>
+            <div class="option-group-reboot">
+              <label for="productSize" class="option-label-reboot">SIZE:</label>
+              <select
+                name="size"
+                id="productSize"
+                class="size-select-reboot"
+              ></select>
+            </div>
+          </div>
+
+          <div class="pdp-actions-reboot">
+            <button
+              type="button"
+              class="btn-pdp-reboot btn-add-to-cart-reboot"
+              id="addToCartBtn"
+            >
+              ADD TO CART
+            </button>
+            <button
+              type="button"
+              class="btn-pdp-reboot btn-buy-now-reboot"
+              id="buyNowBtn"
+            >
+              BUY IT NOW
+            </button>
+          </div>
+
+          <div class="product-accordions-reboot">
+            <div class="accordion-item-reboot">
+              <button class="accordion-button-reboot" aria-expanded="false">
+                DESCRIPTION
+              </button>
+              <div class="accordion-content-reboot">
+                <p id="productDescription">Loading description...</p>
+              </div>
+            </div>
+            <div class="accordion-item-reboot">
+              <button class="accordion-button-reboot" aria-expanded="false">
+                DELIVERY & RETURNS
+              </button>
+              <div class="accordion-content-reboot">
+                <p id="productDeliveryReturns">
+                  Loading delivery & returns info...
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item-reboot">
+              <button class="accordion-button-reboot" aria-expanded="false">
+                FABRIC & CARE
+              </button>
+              <div class="accordion-content-reboot">
+                <p id="productFabricCare">Loading fabric & care info...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="related-products-section-reboot">
+        <div class="container">
+          <h2 class="related-products-title-reboot">
+            YOU MAY <span class="also-like-text-reboot">also</span> LIKE
+          </h2>
+          <div
+            class="related-products-grid-reboot"
+            id="relatedProductsGrid"
+          ></div>
+          <div class="related-nav-dots-reboot" id="relatedNavDots"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; <span id="currentYear"></span> ECLIPTIC. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping & Returns</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="cartPopup" class="cart-popup">
+      <div class="cart-popup-overlay"></div>
+      <div class="cart-popup-content">
+        <div class="cart-popup-header">
+          <h2>Your Cart</h2>
+          <button
+            id="closeCartPopupBtn"
+            class="close-cart-popup-btn"
+            aria-label="Close cart"
+          >
+            &times;
+          </button>
+        </div>
+        <div id="popupCartItemsContainer" class="popup-cart-items-list"></div>
+        <div class="cart-popup-summary" id="popupCartSummaryContainer">
+          <div class="summary-row">
+            <span>Subtotal</span><span id="popupCartSubtotal">$0.00</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span><span id="popupCartTotal">$0.00</span>
+          </div>
+          <button
+            class="btn-pdp btn-checkout-popup"
+            id="popupProceedToCheckoutBtn"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="featureUnavailableModal" class="unavailable-modal">
+      <div class="unavailable-modal-content">
+        <h3>Feature Unavailable</h3>
+        <p>
+          This feature is currently unavailable in the demo version. Thank you
+          for your understanding.
+        </p>
+        <button id="closeUnavailableModalBtnPopup" class="close-modal-btn">
+          Close
+        </button>
+      </div>
+    </div>
+    <div id="toastMessage" class="toast-message"></div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

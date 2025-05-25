@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Noesis Web | Meet Jaswanth Jangiti</title>
+    <meta name="description" content="Meet Jaswanth Jangiti, the founder and lead developer at Noesis Web, a digital agency in Kuwait dedicated to crafting intelligent web solutions.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* noesis_team_page_specific_css.css 
+  ---------------------------------
+  These are styles specifically relevant to the unique sections of team.html 
+  for Noesis Web. This CSS is intended to be used alongside the main 
+  style.css (ID: noesis_web_agency_site_style_v3) which contains 
+  foundational styles (variables, resets, typography, buttons, header, footer, etc.).
+*/
+
+/* 6. Section Specific Styles (General Page Headers, CTAs) - Relevant to Team Page */
+/* Style for the page header on team.html */
+#page-header-team h1, 
+#page-header-team p {
+    color: var(--noesis-cream); /* Ensure text is light on dark background */
+}
+#page-header-team p { /* Subtitle on the dark page header */
+    color: var(--noesis-light-gray); /* Slightly softer for subtitle */
+}
+
+/* Style for the Call to Action section on team.html */
+#team-cta h2, 
+#team-cta p {
+    color: var(--noesis-cream); /* Ensure text is light on dark background */
+}
+#team-cta p { /* Subtitle text in the CTA */
+    color: var(--noesis-light-gray);
+}
+/* The .btn-secondary is already defined in the main CSS for the button in #team-cta */
+
+
+/* 7. Card Styles - Relevant to "Our Approach" section on Team Page */
+/* .feature-card is used in #our-approach (team.html) 
+   Its definition is already in the main style.css (noesis_web_agency_site_style_v3)
+   but reiterated here for clarity if this snippet were viewed in isolation.
+   In practice, you wouldn't need to repeat it if the main CSS is linked. */
+.feature-card { 
+    background-color: var(--noesis-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(47, 49, 48, 0.07); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(47, 49, 48, 0.1);
+}
+.feature-card h3 {
+    color: var(--noesis-dark);
+    margin-bottom: 0.5rem; /* Added for spacing */
+    font-size: 1.25rem; /* Example size */
+}
+.feature-card p {
+    color: var(--noesis-text-muted);
+    font-size: 0.9rem; /* Example size */
+}
+.feature-card .text-4xl { /* For the emoji/icon */
+    margin-bottom: 1rem;
+}
+
+
+/* 8. Team Page Specific Styles
+--------------------------------------------- */
+#team-member-jaswanth {
+    /* Background is white, typically set by Tailwind class `bg-white` in the HTML */
+    /* If not, add: background-color: var(--noesis-white); */
+    /* padding-top and padding-bottom are set by Tailwind py-16 md:py-24 */
+}
+
+#team-member-jaswanth img.rounded-full {
+    border: 4px solid var(--noesis-cream); /* Subtle border to lift from white bg */
+    /* max-width and mx-auto are handled by Tailwind */
+}
+
+/* Styles for the biography text if using Tailwind Prose */
+#team-member-jaswanth .prose p { 
+    color: var(--noesis-text-muted);
+    font-size: 1rem; /* Tailwind prose sets this, can be overridden */
+    line-height: 1.75;
+    margin-bottom: 1em; /* Tailwind prose default */
+}
+#team-member-jaswanth .prose a {
+    color: var(--noesis-teal);
+    font-weight: 500;
+    text-decoration: none; /* Tailwind prose might add underline */
+}
+#team-member-jaswanth .prose a:hover {
+    color: #368d7f; /* Darker teal */
+    text-decoration: underline;
+}
+
+/* "Our Approach" section on team.html */
+#our-approach { 
+    background-color: var(--noesis-light-gray); /* Different bg for this section */
+    /* padding-top and padding-bottom are set by Tailwind py-16 md:py-20 */
+}
+#our-approach .section-title { /* Overrides general .section-title if needed for this specific section */
+    color: var(--noesis-dark);
+}
+#our-approach .section-subtitle { /* Overrides general .section-subtitle if needed */
+    color: var(--noesis-text-muted);
+}
+
+/* 12. Responsive Adjustments - Specific to Team Page Elements */
+@media (max-width: 767px) { /* md */
+    #page-header-team h1 { 
+        font-size: 2.5rem; /* Example: Smaller page title on mobile */
+    }
+    #team-member-jaswanth .grid { 
+        grid-template-columns: 1fr; /* Stack image and text on mobile */
+        text-align: center; 
+    }
+    #team-member-jaswanth img.rounded-full { 
+        margin-bottom: 1.5rem; 
+        margin-left: auto; /* Center image if stacked */
+        margin-right: auto; /* Center image if stacked */
+    }
+    #team-member-jaswanth .md\:col-span-2 { /* Bio text block */
+        text-align: left; /* Revert to left align for bio text on mobile if desired */
+    }
+    #our-approach .grid { 
+        grid-template-columns: 1fr; /* Stack feature cards on mobile */
+    }
+    #our-approach .feature-card { 
+        margin-bottom: 1.5rem; /* Space between stacked cards */
+    }
+    #our-approach .feature-card:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Note: Styles for .custom-cursor, general h1-h6, p, a, .btn, 
+  #header, .nav-link, footer, and animation utilities 
+  are assumed to be in your main style.css.
+*/
+
+    </style>
+
+</head>
+<body class="bg-noesis-cream font-['Inter',_sans-serif] text-noesis-dark relative">
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+
+    <main class="pt-24 md:pt-32">
+
+        <section id="page-header-team" class="py-16 md:py-20 bg-noesis-dark text-noesis-cream text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up opacity-0">Meet Our Team</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    The driving force behind Noesis Web's intelligent solutions.
+                </p>
+            </div>
+        </section>
+
+        <section id="team-member-jaswanth" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+                        <div class="md:col-span-1 animate-fade-in-up opacity-0 animation-delay-200">
+                            <img src="https://placehold.co/400x400/2F3130/F8F6F1?text=Jaswanth+J." alt="Jaswanth Jangiti - Noesis Web" class="rounded-full shadow-xl w-full max-w-xs mx-auto md:mx-0">
+                        </div>
+                        <div class="md:col-span-2 animate-fade-in-up opacity-0 animation-delay-400">
+                            <h2 class="text-3xl md:text-4xl font-bold text-noesis-dark mb-2">Jaswanth Jangiti</h2>
+                            <p class="text-noesis-teal font-semibold text-lg mb-4">Founder & Lead Web Developer</p>
+                            <div class="prose prose-lg text-gray-700 max-w-none">
+                                <p>
+                                    Jaswanth is the visionary founder and principal developer at Noesis Web. With a deep passion for technology and a keen eye for design, he established Noesis Web to deliver web solutions that are not just functional but truly insightful and impactful for businesses in Kuwait and beyond.
+                                </p>
+                                <p>
+                                    His expertise spans across full-stack development, with a specialization in creating bespoke web applications, dynamic WordPress sites, and high-converting Shopify e-commerce platforms. Jaswanth believes in a collaborative approach, working closely with clients to understand their unique challenges and aspirations, transforming them into digital realities.
+                                </p>
+                                <p>
+                                    "My goal is to empower businesses through intelligent web design and robust technology. I believe a great website is a blend of art, science, and a deep understanding of the client's vision. At Noesis Web, we strive to craft digital experiences that not only look wonderful but also drive tangible results and foster growth."
+                                </p>
+                                <p class="mt-6">
+                                    Connect with Jaswanth on LinkedIn: 
+                                    <br>
+                                    <a href="#" class="text-noesis-teal hover:underline hover-target">linkedin.com/in/jaswanthjangiti</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="our-approach" class="py-16 md:py-20 bg-noesis-light">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-noesis-dark mb-6 animate-fade-in-up opacity-0">Our Approach</h2>
+                <p class="section-subtitle text-gray-600 max-w-3xl mx-auto animate-fade-in-up opacity-0 animation-delay-200">
+                    Even as a dedicated one-person powerhouse, the Noesis Web approach is built on core principles that ensure excellence and client satisfaction. We are committed to:
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-10">
+                    <div class="feature-card p-6 bg-white rounded-lg shadow-lg hover-target animate-fade-in-up opacity-0 animation-delay-200">
+                        <div class="text-4xl text-noesis-teal mb-4">💡</div>
+                        <h3 class="text-xl font-semibold mb-2">Deep Understanding</h3>
+                        <p class="text-gray-600 text-sm">Taking the time to truly understand your business, goals, and audience before a single line of code is written.</p>
+                    </div>
+                    <div class="feature-card p-6 bg-white rounded-lg shadow-lg hover-target animate-fade-in-up opacity-0 animation-delay-400">
+                        <div class="text-4xl text-noesis-teal mb-4">✨</div>
+                        <h3 class="text-xl font-semibold mb-2">Quality Craftsmanship</h3>
+                        <p class="text-gray-600 text-sm">Focusing on clean code, intuitive design, and meticulous attention to detail in every project.</p>
+                    </div>
+                    <div class="feature-card p-6 bg-white rounded-lg shadow-lg hover-target animate-fade-in-up opacity-0 animation-delay-600">
+                        <div class="text-4xl text-noesis-teal mb-4">🤝</div>
+                        <h3 class="text-xl font-semibold mb-2">Collaborative Partnership</h3>
+                        <p class="text-gray-600 text-sm">Working closely with you throughout the process, ensuring transparency and alignment with your vision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="team-cta" class="py-16 md:py-24 bg-noesis-dark text-noesis-cream">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up opacity-0">Ready to Partner with Noesis Web?</h2>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-gray-300 animate-fade-in-up opacity-0 animation-delay-200">
+                    Let Jaswanth and the Noesis Web approach bring your digital vision to life.
+                </p>
+                <a href="contact.html" class="btn btn-secondary btn-lg hover-target animate-fade-in-up opacity-0 animation-delay-400">Get Your Free Quote</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="script.js"></script> </body>
+</html>

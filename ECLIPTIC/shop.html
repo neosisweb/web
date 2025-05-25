@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - ECLIPTIC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/winterlook.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .icon-filter::before { content: "▼"; display: inline-block; margin-left: 5px; font-size: 0.7em; }
+        .unavailable-modal, .cart-popup { display: none; }
+        .toast-message { opacity: 0; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="custom-cursor"></div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">ECLIPTIC</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="collections.html" class="nav-link">Collections</a></li>
+                    <li><a href="journal.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+                <a href="#" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+                <a href="#" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                <a href="cart.html" class="header-cart-trigger" aria-label="Shopping Bag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> <span class="cart-count" id="headerCartCount">0</span></a>
+            </div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+    
+    <main id="shop-page">
+        <div class="container shop-header-container">
+            <nav aria-label="breadcrumb" class="breadcrumbs-shop">
+                <ol>
+                    <li><a href="index.html">home</a></li>
+                    <li><span id="breadcrumbCategory">shop</span></li>
+                </ol>
+            </nav>
+            <h1 class="shop-title" id="shopPageTitle">All Products</h1>
+            <div class="category-filters-shop">
+                <button class="btn-category-filter active" data-category="all">All</button>
+                <button class="btn-category-filter" data-category="men">Men</button>
+                <button class="btn-category-filter" data-category="kids">Kids</button>
+                </div>
+            <div class="filter-sort-bar">
+                <button class="btn-filter" type="button" id="filterBtn">all filters <span class="icon-filter"></span></button> <div class="sort-options">
+                    <label for="sort-by" class="visually-hidden">Sort by:</label>
+                    <select name="sort-by" id="sortBySelect" class="select-sort">
+                        <option value="default">sort by</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="name-asc">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <section class="product-catalog-section">
+            <div class="container">
+                <div class="product-grid-shop" id="productGridShop">
+                    <p class="loading-products-message">Loading products...</p>
+                </div>
+                <div class="pagination-shop" id="paginationShopControls">
+                    <button class="btn-pagination prev" type="button" aria-label="Previous page" id="prevPageBtn" disabled>&larr;</button>
+                    <span class="page-info" id="pageInfo">Page 1 of 1</span>
+                    <button class="btn-pagination next" type="button" aria-label="Next page" id="nextPageBtn" disabled>&rarr;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; <span id="currentYear"></span> ECLIPTIC. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping & Returns</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-popup-overlay"></div>
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Your Cart</h2>
+                <button id="closeCartPopupBtn" class="close-cart-popup-btn" aria-label="Close cart">&times;</button>
+            </div>
+            <div id="popupCartItemsContainer" class="popup-cart-items-list"></div>
+            <div class="cart-popup-summary" id="popupCartSummaryContainer">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="popupCartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="popupCartTotal">$0.00</span>
+                </div>
+                <button class="btn-pdp btn-checkout-popup" id="popupProceedToCheckoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="featureUnavailableModal" class="unavailable-modal">
+        <div class="unavailable-modal-content">
+            <h3>Feature Unavailable</h3>
+            <p>This feature is currently unavailable in the demo version. Thank you for your understanding.</p>
+            <button id="closeUnavailableModalBtnPopup" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="toastMessage" class="toast-message"></div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productGrid = document.getElementById('productGridShop');
+            const shopPageTitle = document.getElementById('shopPageTitle');
+            const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+            const sortBySelect = document.getElementById('sortBySelect');
+            const categoryFilterButtons = document.querySelectorAll('.btn-category-filter');
+            const prevPageBtn = document.getElementById('prevPageBtn');
+            const nextPageBtn = document.getElementById('nextPageBtn');
+            const pageInfoEl = document.getElementById('pageInfo');
+
+            let allProducts = typeof products !== 'undefined' ? [...products] : [];
+            let currentFilteredProducts = [...allProducts]; // Products after category filter
+            let currentSortCriteria = 'default';
+            let currentPage = 1;
+            const itemsPerPage = 8;
+
+            function updateShopTitleAndBreadcrumb(category) {
+                let title = "All Products";
+                let breadcrumb = "shop";
+                if (category && category !== 'all') {
+                    title = category.charAt(0).toUpperCase() + category.slice(1) + "'s Products";
+                    breadcrumb = category.toLowerCase();
+                }
+                if (shopPageTitle) shopPageTitle.textContent = title;
+                if (breadcrumbCategory) breadcrumbCategory.textContent = breadcrumb;
+            }
+
+            function filterAndSortProducts(category = 'all', sortCriteria = 'default') {
+                let filtered = [...allProducts];
+                if (category !== 'all') {
+                    filtered = allProducts.filter(p => p.category && p.category.toLowerCase() === category.toLowerCase());
+                }
+                
+                // Sorting logic
+                switch (sortCriteria) {
+                    case 'price-asc':
+                        filtered.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-desc':
+                        filtered.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'newest':
+                        // Assuming newer products are added later in the array or have a date field
+                        // For now, just reverse (simple placeholder for 'newest')
+                        // If you add a 'dateAdded' field to products, sort by that:
+                        // filtered.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+                        filtered.reverse(); // Simple reverse for now
+                        break;
+                    case 'name-asc':
+                        filtered.sort((a, b) => a.name.localeCompare(b.name));
+                        break;
+                    default: // 'default' or any other value
+                        // No specific sort or maintain original filtered order
+                        break; 
+                }
+                currentFilteredProducts = filtered;
+                updateShopTitleAndBreadcrumb(category);
+                displayProducts(1); // Reset to page 1 when filters/sort change
+            }
+
+
+            function displayProducts(page = 1) {
+                if (!productGrid) return;
+                productGrid.innerHTML = '';
+                
+                if (currentFilteredProducts.length === 0) {
+                    productGrid.innerHTML = '<p class="empty-shop-message">No products found matching your criteria.</p>';
+                    if (pageInfoEl) pageInfoEl.textContent = "Page 0 of 0";
+                    if (prevPageBtn) prevPageBtn.disabled = true;
+                    if (nextPageBtn) nextPageBtn.disabled = true;
+                    return;
+                }
+
+                currentPage = page;
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const paginatedProducts = currentFilteredProducts.slice(startIndex, endIndex);
+
+                paginatedProducts.forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.classList.add('product-item-shop');
+                    productItem.innerHTML = `
+                        <a href="product-detail.html?id=${product.id}" class="product-link-shop">
+                            <img src="${product.images[0] || 'https://placehold.co/400x550/0a0a0a/333333?text=N/A'}" alt="${product.name}" onerror="this.src='https://placehold.co/400x550/1a1a1a/404040?text=Image+Error'">
+                            <div class="product-info-shop">
+                                <h3>${product.name.toLowerCase()}</h3>
+                                <p>$${product.price.toFixed(2)}</p>
+                            </div>
+                        </a>
+                    `;
+                    productGrid.appendChild(productItem);
+                });
+                updatePaginationControls(currentFilteredProducts.length);
+            }
+
+            function updatePaginationControls(totalProducts) {
+                if (!pageInfoEl || !prevPageBtn || !nextPageBtn) return;
+                const totalPages = Math.ceil(totalProducts / itemsPerPage);
+                pageInfoEl.textContent = `Page ${currentPage} of ${totalPages > 0 ? totalPages : 1}`;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+            }
+            
+            categoryFilterButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    categoryFilterButtons.forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const category = e.target.dataset.category;
+                    currentSortCriteria = sortBySelect ? sortBySelect.value : 'default';
+                    filterAndSortProducts(category, currentSortCriteria);
+                });
+            });
+
+            if (sortBySelect) {
+                sortBySelect.addEventListener('change', (e) => {
+                    currentSortCriteria = e.target.value;
+                    const activeCategoryButton = document.querySelector('.btn-category-filter.active');
+                    const category = activeCategoryButton ? activeCategoryButton.dataset.category : 'all';
+                    filterAndSortProducts(category, currentSortCriteria);
+                });
+            }
+
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', () => {
+                    if (currentPage > 1) displayProducts(currentPage - 1);
+                });
+            }
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', () => {
+                    const totalPages = Math.ceil(currentFilteredProducts.length / itemsPerPage);
+                    if (currentPage < totalPages) displayProducts(currentPage + 1);
+                });
+            }
+
+            // Initial display (show "All" products by default)
+            filterAndSortProducts('all', 'default');
+        });
+    </script>
+</body>
+</html>
