@@ -634,7 +634,7 @@ footer a:hover {
 @media (max-width: 767px) {
     .iframe-container {
     position: relative;
-    width: 100%;
+    width: 90%;
     border: 8px solid #333; /* Device border */
     border-radius: 12px;   /* Rounded corners */
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -643,7 +643,7 @@ footer a:hover {
 }
 .iframe-container iframe {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 1000px; /* Adjust as needed, or use aspect ratio techniques */
     border: none;
 }
